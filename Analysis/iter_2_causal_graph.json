@@ -20,16 +20,32 @@
       "d16",
       "d17",
       "d18",
-      "d19"
+      "d19",
+      "d20",
+      "d21",
+      "d25",
+      "d26",
+      "d27",
+      "d28",
+      "d29",
+      "d30"
     ],
     "edges": [
       {
-        "from": "d1",
-        "to": "d8",
+        "from": "d2",
+        "to": "d1",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Boundary density inversely proportional to grain size"
+        "reason": "Mean of distribution defines average grain size"
+      },
+      {
+        "from": "d1",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Geometric relationship: boundary area scales inversely"
       },
       {
         "from": "d1",
@@ -37,415 +53,371 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Triple junction density scales with grain size"
+        "reason": "Topological scaling: triple junctions scale d-squared"
       },
       {
         "from": "d1",
-        "to": "d2",
+        "to": "d25",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Mean curvature scales inversely with size"
+      },
+      {
+        "from": "d1",
+        "to": "d15",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Mean grain size defines distribution center"
+        "reason": "Parent grain constrains subgrain maximum size"
       },
       {
         "from": "d1",
-        "to": "d19",
+        "to": "d17",
         "type": "causal",
-        "mechanism": "direct",
+        "mechanism": "indirect",
         "confidence": "medium",
-        "reason": "Parent grain size constrains subgrain size"
-      },
-      {
-        "from": "d2",
-        "to": "d8",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Distribution width affects average boundary density"
+        "reason": "Size affects curvature which drives mobility"
       },
       {
         "from": "d3",
+        "to": "d19",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Aspect ratio component defines shape factor"
+      },
+      {
+        "from": "d4",
         "to": "d8",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Elongated grains increase boundary area per volume"
-      },
-      {
-        "from": "d4",
-        "to": "d10",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Texture concentrates specific boundary character types"
-      },
-      {
-        "from": "d4",
-        "to": "d7",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Texture influences boundary misorientation angle distribution"
-      },
-      {
-        "from": "d5",
-        "to": "d14",
-        "type": "causal",
-        "mechanism": "direct",
         "confidence": "high",
-        "reason": "Boundary energy contributes to stored energy"
-      },
-      {
-        "from": "d5",
-        "to": "d16",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Higher energy boundaries more mobile"
+        "reason": "Total boundary energy from area times density"
       },
       {
         "from": "d6",
-        "to": "d5",
+        "to": "d8",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
         "reason": "Twin boundaries lower average boundary energy"
       },
       {
-        "from": "d6",
-        "to": "d10",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Twin fraction modifies boundary character distribution"
-      },
-      {
-        "from": "d7",
-        "to": "d5",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "High angle boundaries increase average energy"
-      },
-      {
-        "from": "d7",
-        "to": "d10",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Angle fraction defines character distribution component"
-      },
-      {
-        "from": "d8",
-        "to": "d13",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Triple junctions occur at boundary intersections"
-      },
-      {
-        "from": "d8",
-        "to": "d14",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "Boundary density increases stored boundary energy"
-      },
-      {
         "from": "d9",
-        "to": "d14",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Dislocation line energy contributes to storage"
-      },
-      {
-        "from": "d9",
-        "to": "d19",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Dislocations organize into subgrain boundaries"
-      },
-      {
-        "from": "d9",
-        "to": "d12",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Dislocations generate local strain fields"
-      },
-      {
-        "from": "d10",
-        "to": "d5",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Special boundaries have lower energies"
-      },
-      {
-        "from": "d10",
         "to": "d16",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Special boundaries have altered mobility"
-      },
-      {
-        "from": "d11",
-        "to": "d5",
-        "type": "causal",
-        "mechanism": "direct",
         "confidence": "high",
-        "reason": "Boundary plane orientation affects energy"
+        "reason": "Dislocation density determines stored elastic energy"
       },
       {
-        "from": "d11",
-        "to": "d16",
+        "from": "d9",
+        "to": "d20",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Plane character influences mobility"
+        "reason": "Dislocation density creates nucleation sites"
       },
       {
-        "from": "d11",
-        "to": "d10",
+        "from": "d9",
+        "to": "d28",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Dislocation activity drives lattice rotation"
+      },
+      {
+        "from": "d10",
+        "to": "d6",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Plane distribution component of character distribution"
+        "reason": "GBCD defines twin boundary fraction subset"
+      },
+      {
+        "from": "d10",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "GBCD defines high angle boundary fraction"
+      },
+      {
+        "from": "d10",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Character distribution determines misorientation angle distribution"
+      },
+      {
+        "from": "d11",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Misorientation threshold defines high angle boundaries"
+      },
+      {
+        "from": "d11",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Specific angles identify twin boundaries"
+      },
+      {
+        "from": "d11",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Read-Shockley: energy function of misorientation"
+      },
+      {
+        "from": "d11",
+        "to": "d29",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Boundary misorientation determines neighbor misorientation statistics"
       },
       {
         "from": "d12",
-        "to": "d14",
+        "to": "d5",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Local strain heterogeneity stores elastic energy"
+        "confidence": "medium",
+        "reason": "Orientation spread inversely indicates texture strength"
       },
       {
         "from": "d14",
-        "to": "d16",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "Stored energy provides driving force for migration"
-      },
-      {
-        "from": "d15",
         "to": "d13",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Grain topology determines triple junction count"
+        "confidence": "medium",
+        "reason": "Grain topology determines triple junction distribution"
+      },
+      {
+        "from": "d14",
+        "to": "d27",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Topology defines boundary network connectivity"
       },
       {
         "from": "d15",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Subgrain size relates to dislocation density"
+      },
+      {
+        "from": "d16",
+        "to": "d20",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Stored energy drives recrystallization kinetics"
+      },
+      {
+        "from": "d18",
+        "to": "d17",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Tortuosity impedes boundary migration velocity"
+      },
+      {
+        "from": "d21",
         "to": "d8",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Topological coordination affects boundary density"
+        "reason": "Solute segregation reduces boundary energy"
       },
       {
-        "from": "d17",
-        "to": "d9",
+        "from": "d21",
+        "to": "d17",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Precipitates generate Orowan dislocations"
+        "reason": "Segregation creates solute drag reducing mobility"
       },
       {
-        "from": "d17",
-        "to": "d16",
+        "from": "d25",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Curvature generates Gibbs-Thomson driving pressure"
+      },
+      {
+        "from": "d25",
+        "to": "d17",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Curvature pressure drives boundary migration velocity"
+      },
+      {
+        "from": "d26",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Boundary plane orientation affects energy anisotropy"
+      },
+      {
+        "from": "d27",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Connectivity network includes triple junction nodes"
+      },
+      {
+        "from": "d30",
+        "to": "d17",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
         "reason": "Precipitates pin boundaries via Zener drag"
-      },
-      {
-        "from": "d17",
-        "to": "d1",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Precipitates limit grain growth via pinning"
-      },
-      {
-        "from": "d18",
-        "to": "d5",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Coherency reduces interface energy"
-      },
-      {
-        "from": "d18",
-        "to": "d9",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Semicoherent interfaces generate misfit dislocations"
-      },
-      {
-        "from": "d19",
-        "to": "d8",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Subgrain boundaries contribute to total density"
-      },
-      {
-        "from": "d19",
-        "to": "d14",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "low",
-        "reason": "Subgrain boundaries add to stored energy"
       }
     ],
     "cycles_resolved": [],
-    "notes": "DAG constructed from microstructure first principles. All correlational edges promoted with clear physical causality.",
+    "notes": "Promoted correlations to causal where mechanism clear. Added topology and GBCD relationships.",
     "edges_cleaned": [
       {
-        "from": "d1",
-        "to": "d8"
-      },
-      {
-        "from": "d1",
-        "to": "d13"
-      },
-      {
-        "from": "d1",
-        "to": "d2"
-      },
-      {
-        "from": "d1",
-        "to": "d19"
-      },
-      {
-        "from": "d8",
-        "to": "d13"
-      },
-      {
-        "from": "d8",
-        "to": "d14"
-      },
-      {
         "from": "d2",
+        "to": "d1"
+      },
+      {
+        "from": "d1",
+        "to": "d4"
+      },
+      {
+        "from": "d1",
+        "to": "d13"
+      },
+      {
+        "from": "d1",
+        "to": "d25"
+      },
+      {
+        "from": "d1",
+        "to": "d15"
+      },
+      {
+        "from": "d1",
+        "to": "d17"
+      },
+      {
+        "from": "d4",
         "to": "d8"
       },
       {
-        "from": "d19",
+        "from": "d25",
         "to": "d8"
       },
       {
-        "from": "d19",
-        "to": "d14"
+        "from": "d25",
+        "to": "d17"
+      },
+      {
+        "from": "d15",
+        "to": "d9"
       },
       {
         "from": "d3",
+        "to": "d19"
+      },
+      {
+        "from": "d6",
         "to": "d8"
       },
       {
-        "from": "d4",
-        "to": "d10"
+        "from": "d9",
+        "to": "d16"
       },
       {
-        "from": "d4",
+        "from": "d9",
+        "to": "d20"
+      },
+      {
+        "from": "d9",
+        "to": "d28"
+      },
+      {
+        "from": "d16",
+        "to": "d20"
+      },
+      {
+        "from": "d10",
+        "to": "d6"
+      },
+      {
+        "from": "d10",
         "to": "d7"
       },
       {
         "from": "d10",
-        "to": "d5"
-      },
-      {
-        "from": "d10",
-        "to": "d16"
-      },
-      {
-        "from": "d7",
-        "to": "d5"
-      },
-      {
-        "from": "d7",
-        "to": "d10"
-      },
-      {
-        "from": "d5",
-        "to": "d14"
-      },
-      {
-        "from": "d5",
-        "to": "d16"
-      },
-      {
-        "from": "d14",
-        "to": "d16"
-      },
-      {
-        "from": "d6",
-        "to": "d5"
-      },
-      {
-        "from": "d6",
-        "to": "d10"
-      },
-      {
-        "from": "d9",
-        "to": "d14"
-      },
-      {
-        "from": "d9",
-        "to": "d19"
-      },
-      {
-        "from": "d9",
-        "to": "d12"
-      },
-      {
-        "from": "d12",
-        "to": "d14"
+        "to": "d11"
       },
       {
         "from": "d11",
-        "to": "d5"
+        "to": "d7"
       },
       {
         "from": "d11",
-        "to": "d16"
+        "to": "d6"
       },
       {
         "from": "d11",
-        "to": "d10"
-      },
-      {
-        "from": "d15",
-        "to": "d13"
-      },
-      {
-        "from": "d15",
         "to": "d8"
       },
       {
-        "from": "d17",
-        "to": "d9"
+        "from": "d11",
+        "to": "d29"
       },
       {
-        "from": "d17",
-        "to": "d16"
-      },
-      {
-        "from": "d17",
-        "to": "d1"
-      },
-      {
-        "from": "d18",
+        "from": "d12",
         "to": "d5"
       },
       {
+        "from": "d14",
+        "to": "d13"
+      },
+      {
+        "from": "d14",
+        "to": "d27"
+      },
+      {
+        "from": "d27",
+        "to": "d13"
+      },
+      {
         "from": "d18",
-        "to": "d9"
+        "to": "d17"
+      },
+      {
+        "from": "d21",
+        "to": "d8"
+      },
+      {
+        "from": "d21",
+        "to": "d17"
+      },
+      {
+        "from": "d26",
+        "to": "d8"
+      },
+      {
+        "from": "d30",
+        "to": "d17"
       }
     ]
   }
