@@ -4,69 +4,108 @@
     "method": "do-calculus (pgmpy) + gCastle PC",
     "results": [
       {
-        "edge": "d8->d1",
+        "edge": "d1->d6",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d8->d6",
+        "edge": "d1->d3",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d8->d7",
+        "edge": "d1->d9",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d8->d2",
+        "edge": "d6->d4",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d1->d5",
+        "edge": "d6->d10",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d6->d7",
+        "edge": "d6->d3",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d7->d1",
+        "edge": "d9->d10",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d3->d2",
+        "edge": "d2->d11",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d3->d5",
+        "edge": "d2->d3",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d2->d5",
+        "edge": "d11->d5",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d4->d3",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d5->d9",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d7->d2",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d8->d5",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d8->d9",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       }
     ],
-    "latent_nodes": [],
-    "cycles_removed": [],
-    "gcastle_shd": 9,
+    "latent_nodes": [
+      "d3",
+      "d9",
+      "d10"
+    ],
+    "cycles_removed": [
+      [
+        "d3",
+        "d6"
+      ]
+    ],
+    "gcastle_shd": 15,
     "verdict": "none"
   }
 }
