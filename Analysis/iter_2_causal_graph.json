@@ -12,80 +12,104 @@
       "d8",
       "d9",
       "d10",
-      "d11"
+      "d11",
+      "d12",
+      "d13",
+      "d14",
+      "d15",
+      "d16",
+      "d17",
+      "d18",
+      "d19"
     ],
     "edges": [
       {
         "from": "d1",
-        "to": "d6",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "Grain size affects dislocation accumulation during deformation"
-      },
-      {
-        "from": "d1",
-        "to": "d3",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "Grain size controls strain partitioning behavior"
-      },
-      {
-        "from": "d1",
-        "to": "d9",
+        "to": "d8",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Grain size determines total boundary area"
+        "reason": "Boundary density inversely proportional to grain size"
       },
       {
-        "from": "d2",
-        "to": "d11",
+        "from": "d1",
+        "to": "d13",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Texture determines orientation distribution and misorientations"
+        "reason": "Triple junction density scales with grain size"
+      },
+      {
+        "from": "d1",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Mean grain size defines distribution center"
+      },
+      {
+        "from": "d1",
+        "to": "d19",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Parent grain size constrains subgrain size"
       },
       {
         "from": "d2",
-        "to": "d3",
+        "to": "d8",
         "type": "causal",
-        "mechanism": "indirect",
+        "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Texture affects slip system activity variations"
+        "reason": "Distribution width affects average boundary density"
       },
       {
         "from": "d3",
-        "to": "d6",
+        "to": "d8",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Strain gradients require geometrically necessary dislocations"
+        "confidence": "medium",
+        "reason": "Elongated grains increase boundary area per volume"
       },
       {
         "from": "d4",
-        "to": "d3",
+        "to": "d10",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Subgrain boundaries create local strain gradients"
+        "confidence": "medium",
+        "reason": "Texture concentrates specific boundary character types"
+      },
+      {
+        "from": "d4",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Texture influences boundary misorientation angle distribution"
       },
       {
         "from": "d5",
-        "to": "d9",
+        "to": "d14",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Boundary character directly determines energy distribution"
+        "reason": "Boundary energy contributes to stored energy"
+      },
+      {
+        "from": "d5",
+        "to": "d16",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Higher energy boundaries more mobile"
       },
       {
         "from": "d6",
-        "to": "d4",
+        "to": "d5",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Dislocation density drives subgrain structure formation"
+        "reason": "Twin boundaries lower average boundary energy"
       },
       {
         "from": "d6",
@@ -93,124 +117,334 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Dislocation energy contributes to stored energy"
-      },
-      {
-        "from": "d6",
-        "to": "d3",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Nonuniform dislocation distribution creates strain heterogeneity"
+        "reason": "Twin fraction modifies boundary character distribution"
       },
       {
         "from": "d7",
-        "to": "d2",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "High angle boundaries increase average energy"
+      },
+      {
+        "from": "d7",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Angle fraction defines character distribution component"
+      },
+      {
+        "from": "d8",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Triple junctions occur at boundary intersections"
+      },
+      {
+        "from": "d8",
+        "to": "d14",
         "type": "causal",
         "mechanism": "indirect",
         "confidence": "medium",
-        "reason": "Grain elongation indicates deformation texture development"
+        "reason": "Boundary density increases stored boundary energy"
       },
       {
-        "from": "d8",
+        "from": "d9",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation line energy contributes to storage"
+      },
+      {
+        "from": "d9",
+        "to": "d19",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Dislocations organize into subgrain boundaries"
+      },
+      {
+        "from": "d9",
+        "to": "d12",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocations generate local strain fields"
+      },
+      {
+        "from": "d10",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Special boundaries have lower energies"
+      },
+      {
+        "from": "d10",
+        "to": "d16",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Special boundaries have altered mobility"
+      },
+      {
+        "from": "d11",
         "to": "d5",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Twins add special \u03a33 boundaries"
+        "reason": "Boundary plane orientation affects energy"
       },
       {
-        "from": "d8",
-        "to": "d9",
+        "from": "d11",
+        "to": "d16",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Coherent twins reduce average boundary energy"
+        "confidence": "medium",
+        "reason": "Plane character influences mobility"
       },
       {
-        "from": "d9",
+        "from": "d11",
         "to": "d10",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Boundary energy contributes to total stored energy"
+        "reason": "Plane distribution component of character distribution"
       },
       {
-        "from": "d11",
+        "from": "d12",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Local strain heterogeneity stores elastic energy"
+      },
+      {
+        "from": "d14",
+        "to": "d16",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Stored energy provides driving force for migration"
+      },
+      {
+        "from": "d15",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Grain topology determines triple junction count"
+      },
+      {
+        "from": "d15",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Topological coordination affects boundary density"
+      },
+      {
+        "from": "d17",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates generate Orowan dislocations"
+      },
+      {
+        "from": "d17",
+        "to": "d16",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates pin boundaries via Zener drag"
+      },
+      {
+        "from": "d17",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates limit grain growth via pinning"
+      },
+      {
+        "from": "d18",
         "to": "d5",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Misorientation distribution defines boundary character types"
-      }
-    ],
-    "cycles_resolved": [
+        "reason": "Coherency reduces interface energy"
+      },
       {
-        "cycle": "d3 -> d6 -> d3",
-        "resolution": "Retained both edges; sequential temporal mechanism",
-        "reason": "Initial strain creates GNDs, then dislocations create new strain"
+        "from": "d18",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Semicoherent interfaces generate misfit dislocations"
+      },
+      {
+        "from": "d19",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Subgrain boundaries contribute to total density"
+      },
+      {
+        "from": "d19",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "low",
+        "reason": "Subgrain boundaries add to stored energy"
       }
     ],
-    "notes": "Promoted clear physical relationships. Cycle d3-d6 represents feedback during deformation process.",
+    "cycles_resolved": [],
+    "notes": "DAG constructed from microstructure first principles. All correlational edges promoted with clear physical causality.",
     "edges_cleaned": [
       {
         "from": "d1",
-        "to": "d6"
+        "to": "d8"
       },
       {
         "from": "d1",
-        "to": "d3"
+        "to": "d13"
       },
       {
         "from": "d1",
-        "to": "d9"
+        "to": "d2"
+      },
+      {
+        "from": "d1",
+        "to": "d19"
+      },
+      {
+        "from": "d8",
+        "to": "d13"
+      },
+      {
+        "from": "d8",
+        "to": "d14"
+      },
+      {
+        "from": "d2",
+        "to": "d8"
+      },
+      {
+        "from": "d19",
+        "to": "d8"
+      },
+      {
+        "from": "d19",
+        "to": "d14"
+      },
+      {
+        "from": "d3",
+        "to": "d8"
+      },
+      {
+        "from": "d4",
+        "to": "d10"
+      },
+      {
+        "from": "d4",
+        "to": "d7"
+      },
+      {
+        "from": "d10",
+        "to": "d5"
+      },
+      {
+        "from": "d10",
+        "to": "d16"
+      },
+      {
+        "from": "d7",
+        "to": "d5"
+      },
+      {
+        "from": "d7",
+        "to": "d10"
+      },
+      {
+        "from": "d5",
+        "to": "d14"
+      },
+      {
+        "from": "d5",
+        "to": "d16"
+      },
+      {
+        "from": "d14",
+        "to": "d16"
       },
       {
         "from": "d6",
-        "to": "d4"
+        "to": "d5"
       },
       {
         "from": "d6",
         "to": "d10"
-      },
-      {
-        "from": "d6",
-        "to": "d3"
       },
       {
         "from": "d9",
-        "to": "d10"
+        "to": "d14"
       },
       {
-        "from": "d2",
-        "to": "d11"
+        "from": "d9",
+        "to": "d19"
       },
       {
-        "from": "d2",
-        "to": "d3"
+        "from": "d9",
+        "to": "d12"
+      },
+      {
+        "from": "d12",
+        "to": "d14"
       },
       {
         "from": "d11",
         "to": "d5"
       },
       {
-        "from": "d4",
-        "to": "d3"
+        "from": "d11",
+        "to": "d16"
       },
       {
-        "from": "d5",
+        "from": "d11",
+        "to": "d10"
+      },
+      {
+        "from": "d15",
+        "to": "d13"
+      },
+      {
+        "from": "d15",
+        "to": "d8"
+      },
+      {
+        "from": "d17",
         "to": "d9"
       },
       {
-        "from": "d7",
-        "to": "d2"
+        "from": "d17",
+        "to": "d16"
       },
       {
-        "from": "d8",
+        "from": "d17",
+        "to": "d1"
+      },
+      {
+        "from": "d18",
         "to": "d5"
       },
       {
-        "from": "d8",
+        "from": "d18",
         "to": "d9"
       }
     ]
