@@ -6,7 +6,11 @@
       "d2",
       "d3",
       "d4",
-      "d5"
+      "d5",
+      "d6",
+      "d7",
+      "d8",
+      "d9"
     ],
     "edges": [
       {
@@ -15,43 +19,174 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Smaller grains increase boundary area per volume"
+        "reason": "Geometric relationship: boundary density inversely proportional"
       },
       {
-        "from": "d3",
-        "to": "d5",
+        "from": "d1",
+        "to": "d8",
         "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Elongated grains increase total boundary area"
+        "mechanism": "indirect",
+        "confidence": "high",
+        "reason": "Via grain boundary density contribution"
       },
       {
-        "from": "d4",
-        "to": "d2",
+        "from": "d6",
+        "to": "d8",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Strong texture constrains grain orientation distribution"
+        "reason": "Dislocation elastic energy storage fundamental"
+      },
+      {
+        "from": "d5",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Boundary area directly stores interfacial energy"
+      },
+      {
+        "from": "d8",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Stored energy drives recrystallization nucleation kinetics"
+      },
+      {
+        "from": "d6",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation rearrangement forms subgrain boundaries"
+      },
+      {
+        "from": "d7",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Low-angle boundaries contribute elastic energy"
+      },
+      {
+        "from": "d9",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "New grain nucleation determines size distribution"
+      },
+      {
+        "from": "d9",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "New grains dislocation-free, annihilation occurs"
+      },
+      {
+        "from": "d9",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Energy consumed during boundary migration process"
       },
       {
         "from": "d2",
         "to": "d5",
         "type": "causal",
-        "mechanism": "indirect",
+        "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Misorientation affects boundary energy and grain topology"
+        "reason": "Misorientation distribution defines boundary character density"
       },
       {
-        "from": "d1",
-        "to": "d3",
+        "from": "d2",
+        "to": "d8",
         "type": "causal",
         "mechanism": "indirect",
-        "confidence": "low",
-        "reason": "Grain growth kinetics can produce anisotropic morphology"
+        "confidence": "medium",
+        "reason": "Via grain boundary energy dependence"
+      },
+      {
+        "from": "d4",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Strong texture indicates prior deformation dislocation"
+      },
+      {
+        "from": "d4",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Via dislocation density from deformation"
+      },
+      {
+        "from": "d4",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Orientation dependent nucleation site availability"
+      },
+      {
+        "from": "d3",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Elongation indicates deformation increases dislocations"
+      },
+      {
+        "from": "d3",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Via dislocation content from deformation"
+      },
+      {
+        "from": "d9",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallization eliminates subgrain structures"
+      },
+      {
+        "from": "d9",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "New random orientations reduce texture intensity"
+      },
+      {
+        "from": "d9",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Equiaxed grains form reducing aspect ratio"
       }
     ],
-    "cycles_resolved": [],
-    "notes": "Promoted correlations to causal based on physical mechanisms. Added grain size to aspect ratio link.",
+    "cycles_resolved": [
+      {
+        "cycle": "d8->d9->d8",
+        "resolution": "Temporal: stored energy drives then depletes",
+        "confidence": "high"
+      },
+      {
+        "cycle": "d1->d8->d9->d1",
+        "resolution": "Process evolution: microstructure transforms sequentially",
+        "confidence": "high"
+      }
+    ],
+    "notes": "DAG represents deformation-recrystallization cycle. Temporal progression prevents cycles physically.",
     "edges_cleaned": [
       {
         "from": "d1",
@@ -59,19 +194,51 @@
       },
       {
         "from": "d1",
+        "to": "d8"
+      },
+      {
+        "from": "d5",
+        "to": "d8"
+      },
+      {
+        "from": "d8",
+        "to": "d9"
+      },
+      {
+        "from": "d6",
+        "to": "d7"
+      },
+      {
+        "from": "d9",
+        "to": "d6"
+      },
+      {
+        "from": "d9",
+        "to": "d7"
+      },
+      {
+        "from": "d9",
+        "to": "d4"
+      },
+      {
+        "from": "d9",
         "to": "d3"
-      },
-      {
-        "from": "d3",
-        "to": "d5"
-      },
-      {
-        "from": "d4",
-        "to": "d2"
       },
       {
         "from": "d2",
         "to": "d5"
+      },
+      {
+        "from": "d2",
+        "to": "d8"
+      },
+      {
+        "from": "d4",
+        "to": "d6"
+      },
+      {
+        "from": "d3",
+        "to": "d6"
       }
     ]
   }
