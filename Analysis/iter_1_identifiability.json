@@ -10,19 +10,25 @@
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d1->d2",
+        "edge": "d1->d4",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d7->d9",
+        "edge": "d4->d11",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d9->d4",
+        "edge": "d4->d9",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d11->d7",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
@@ -34,13 +40,31 @@
         "reason": "no valid adjustment set found"
       },
       {
+        "edge": "d6->d10",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d10->d7",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
         "edge": "d5->d1",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d5->d9",
+        "edge": "d5->d4",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d9->d3",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
@@ -52,13 +76,7 @@
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d8->d3",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d8->d4",
+        "edge": "d8->d7",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
@@ -68,14 +86,14 @@
     "cycles_removed": [
       [
         "d9",
-        "d1"
+        "d4"
       ],
       [
-        "d4",
-        "d9"
+        "d9",
+        "d1"
       ]
     ],
-    "gcastle_shd": 14,
+    "gcastle_shd": 16,
     "verdict": "none"
   }
 }
