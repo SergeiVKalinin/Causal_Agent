@@ -1,0 +1,346 @@
+{
+  "iteration": 5,
+  "causal_graph": {
+    "nodes": [
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "d5",
+      "d6",
+      "d8",
+      "d9",
+      "d10",
+      "d11",
+      "d12",
+      "d13",
+      "d14",
+      "d15",
+      "d16",
+      "d18",
+      "d19",
+      "d20",
+      "d21",
+      "d22",
+      "d23"
+    ],
+    "edges": [
+      {
+        "from": "d1",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Boundary density inversely proportional to grain size"
+      },
+      {
+        "from": "d1",
+        "to": "d20",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Stored energy increases with decreasing grain size"
+      },
+      {
+        "from": "d1",
+        "to": "d15",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Mean grain size defines distribution statistics"
+      },
+      {
+        "from": "d2",
+        "to": "d18",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Mean misorientation defines angle distribution statistics"
+      },
+      {
+        "from": "d3",
+        "to": "d19",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Texture determines Schmid factor distribution"
+      },
+      {
+        "from": "d6",
+        "to": "d20",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Stored energy proportional to dislocation density"
+      },
+      {
+        "from": "d6",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "KAM increases with dislocation density"
+      },
+      {
+        "from": "d6",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Dislocations rearrange forming subgrain structures"
+      },
+      {
+        "from": "d8",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallization removes dislocations"
+      },
+      {
+        "from": "d8",
+        "to": "d20",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallization lowers stored energy"
+      },
+      {
+        "from": "d8",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallization refines grain size"
+      },
+      {
+        "from": "d12",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Twin boundaries define special character fraction"
+      },
+      {
+        "from": "d14",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "KAM directly relates to GND density"
+      },
+      {
+        "from": "d14",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "GND is component of total dislocation density"
+      },
+      {
+        "from": "d16",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates pin and accumulate dislocations"
+      },
+      {
+        "from": "d19",
+        "to": "d21",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Schmid factor determines slip activation"
+      },
+      {
+        "from": "d21",
+        "to": "d22",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Active slip systems partition strain"
+      },
+      {
+        "from": "d21",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Slip activity generates dislocations"
+      },
+      {
+        "from": "d22",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Strain partitioning creates GND density"
+      },
+      {
+        "from": "d23",
+        "to": "d22",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Phase fraction controls strain partitioning"
+      },
+      {
+        "from": "d5",
+        "to": "d20",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Grain boundary energy contributes to total"
+      },
+      {
+        "from": "d4",
+        "to": "d22",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Grain shape influences strain anisotropy"
+      },
+      {
+        "from": "d11",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "KAM contributes to grain orientation spread"
+      },
+      {
+        "from": "d1",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Grain size affects boundary misorientation statistics"
+      },
+      {
+        "from": "d23",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Phase distribution influences texture formation"
+      },
+      {
+        "from": "d10",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Subgrains indicate local misorientation accumulation"
+      }
+    ],
+    "cycles_resolved": [],
+    "notes": "DAG built from materials microstructure fundamentals. Recrystallization causes grain refinement upstream.",
+    "edges_cleaned": [
+      {
+        "from": "d1",
+        "to": "d5"
+      },
+      {
+        "from": "d1",
+        "to": "d20"
+      },
+      {
+        "from": "d1",
+        "to": "d15"
+      },
+      {
+        "from": "d1",
+        "to": "d2"
+      },
+      {
+        "from": "d5",
+        "to": "d20"
+      },
+      {
+        "from": "d2",
+        "to": "d18"
+      },
+      {
+        "from": "d3",
+        "to": "d19"
+      },
+      {
+        "from": "d19",
+        "to": "d21"
+      },
+      {
+        "from": "d6",
+        "to": "d20"
+      },
+      {
+        "from": "d6",
+        "to": "d11"
+      },
+      {
+        "from": "d6",
+        "to": "d10"
+      },
+      {
+        "from": "d11",
+        "to": "d13"
+      },
+      {
+        "from": "d10",
+        "to": "d11"
+      },
+      {
+        "from": "d8",
+        "to": "d6"
+      },
+      {
+        "from": "d8",
+        "to": "d20"
+      },
+      {
+        "from": "d8",
+        "to": "d1"
+      },
+      {
+        "from": "d12",
+        "to": "d9"
+      },
+      {
+        "from": "d14",
+        "to": "d11"
+      },
+      {
+        "from": "d14",
+        "to": "d6"
+      },
+      {
+        "from": "d16",
+        "to": "d6"
+      },
+      {
+        "from": "d21",
+        "to": "d22"
+      },
+      {
+        "from": "d21",
+        "to": "d6"
+      },
+      {
+        "from": "d22",
+        "to": "d14"
+      },
+      {
+        "from": "d23",
+        "to": "d22"
+      },
+      {
+        "from": "d23",
+        "to": "d3"
+      },
+      {
+        "from": "d4",
+        "to": "d22"
+      }
+    ]
+  }
+}
