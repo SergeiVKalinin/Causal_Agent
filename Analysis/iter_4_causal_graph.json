@@ -6,345 +6,247 @@
       "d2",
       "d3",
       "d4",
-      "d5",
       "d6",
+      "d7",
       "d8",
-      "d9",
-      "d10",
       "d11",
       "d12",
       "d13",
       "d14",
-      "d15",
-      "d16",
-      "d17",
-      "d18",
-      "d19"
+      "d15"
     ],
     "edges": [
       {
-        "from": "d1",
-        "to": "d5",
+        "from": "d11",
+        "to": "d1",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "boundary density inversely proportional to grain size"
-      },
-      {
-        "from": "d1",
-        "to": "d6",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "smaller grains accumulate more dislocations during deformation"
-      },
-      {
-        "from": "d6",
-        "to": "d11",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "dislocation density creates local lattice misorientation"
-      },
-      {
-        "from": "d6",
-        "to": "d14",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "GND subset of total dislocation density"
+        "reason": "Recrystallization nucleates new grain sizes"
       },
       {
         "from": "d11",
-        "to": "d14",
+        "to": "d2",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "KAM directly measures GND via Nye tensor"
+        "reason": "Recrystallization creates new crystal orientations"
       },
       {
-        "from": "d8",
-        "to": "d6",
+        "from": "d11",
+        "to": "d7",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "recrystallization annihilates dislocations forming new grains"
+        "reason": "Recrystallization annihilates dislocations in new grains"
       },
       {
-        "from": "d8",
-        "to": "d11",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "high",
-        "reason": "recrystallization reduces dislocation density lowering KAM"
-      },
-      {
-        "from": "d10",
-        "to": "d6",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "subgrain boundaries form from dislocation rearrangement"
-      },
-      {
-        "from": "d2",
-        "to": "d17",
+        "from": "d11",
+        "to": "d8",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "boundary energy function of misorientation angle"
+        "reason": "Recrystallization modifies grain boundary misorientation distribution"
       },
       {
-        "from": "d2",
-        "to": "d9",
+        "from": "d1",
+        "to": "d7",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "character distribution derived from misorientation distribution"
+        "reason": "Grain size constrains dislocation accumulation geometrically"
       },
       {
-        "from": "d12",
-        "to": "d9",
+        "from": "d1",
+        "to": "d12",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "twin boundaries component of overall GBCD"
-      },
-      {
-        "from": "d13",
-        "to": "d14",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "orientation spread quantifies GND induced gradients"
+        "reason": "Grain size determines total boundary area"
       },
       {
         "from": "d1",
         "to": "d15",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "average grain size statistical moment of distribution"
+        "confidence": "medium",
+        "reason": "Smaller grains require GNDs for compatibility"
       },
       {
         "from": "d2",
-        "to": "d18",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "average misorientation statistical moment of distribution"
-      },
-      {
-        "from": "d3",
-        "to": "d19",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "texture constrains crystallographic orientation affecting Schmid factors"
-      },
-      {
-        "from": "d16",
-        "to": "d6",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "precipitates pin dislocations increasing stored density"
-      },
-      {
-        "from": "d16",
-        "to": "d8",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "particles pin boundaries inhibiting recrystallization migration"
-      },
-      {
-        "from": "d4",
-        "to": "d5",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "low",
-        "reason": "elongated grains increase boundary area per volume"
-      },
-      {
-        "from": "d10",
-        "to": "d11",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "subgrain boundaries contribute to local misorientation measurements"
-      },
-      {
-        "from": "d6",
         "to": "d13",
         "type": "causal",
         "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Texture determines resolved shear stress distribution"
+      },
+      {
+        "from": "d2",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Texture controls slip system activation favorability"
+      },
+      {
+        "from": "d3",
+        "to": "d15",
+        "type": "causal",
+        "mechanism": "direct",
         "confidence": "medium",
-        "reason": "dislocations create intragranular orientation gradients"
+        "reason": "Elongated grains create strain gradients needing GNDs"
       },
       {
         "from": "d8",
-        "to": "d1",
+        "to": "d4",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "recrystallization produces new grains changing grain size"
+        "reason": "Misorientation angle defines boundary character classification"
       },
       {
-        "from": "d16",
-        "to": "d1",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "precipitates pin boundaries limiting grain growth"
-      },
-      {
-        "from": "d3",
-        "to": "d2",
+        "from": "d8",
+        "to": "d12",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "texture intensity constrains grain boundary misorientation range"
+        "confidence": "high",
+        "reason": "Misorientation directly determines boundary energy"
       },
       {
-        "from": "d5",
-        "to": "d17",
+        "from": "d4",
+        "to": "d6",
         "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "low",
-        "reason": "boundary density influences total boundary energy"
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "GBCD categorization determines twin boundary fraction"
+      },
+      {
+        "from": "d4",
+        "to": "d12",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Boundary character distribution sets average energy"
+      },
+      {
+        "from": "d6",
+        "to": "d12",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Twin boundaries lower average grain boundary energy"
+      },
+      {
+        "from": "d13",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "High Schmid factor enables slip activation"
       },
       {
         "from": "d14",
-        "to": "d13",
+        "to": "d7",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "GND accumulation produces measurable orientation spread"
+        "reason": "Slip activity generates and multiplies dislocations"
       },
       {
-        "from": "d15",
-        "to": "d5",
+        "from": "d14",
+        "to": "d15",
         "type": "causal",
-        "mechanism": "indirect",
+        "mechanism": "direct",
         "confidence": "medium",
-        "reason": "grain size distribution determines average boundary density"
+        "reason": "Heterogeneous slip creates geometrically necessary dislocations"
       },
       {
-        "from": "d18",
-        "to": "d17",
+        "from": "d7",
+        "to": "d15",
         "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "misorientation distribution determines average boundary energy"
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Total dislocation density includes GND component"
       }
     ],
     "cycles_resolved": [],
-    "notes": "Promoted correlations to causal with physical mechanisms. Added processing-microstructure links.",
+    "notes": "Promoted correlational edges to causal with clear physical mechanisms. Added recrystallization to misorientation and slip to GND edges.",
     "edges_cleaned": [
       {
-        "from": "d1",
-        "to": "d5"
+        "from": "d11",
+        "to": "d1"
+      },
+      {
+        "from": "d11",
+        "to": "d2"
+      },
+      {
+        "from": "d11",
+        "to": "d7"
+      },
+      {
+        "from": "d11",
+        "to": "d8"
       },
       {
         "from": "d1",
-        "to": "d6"
+        "to": "d7"
+      },
+      {
+        "from": "d1",
+        "to": "d12"
       },
       {
         "from": "d1",
         "to": "d15"
       },
       {
-        "from": "d5",
-        "to": "d17"
-      },
-      {
-        "from": "d6",
-        "to": "d11"
-      },
-      {
-        "from": "d6",
-        "to": "d14"
-      },
-      {
-        "from": "d6",
+        "from": "d2",
         "to": "d13"
       },
       {
-        "from": "d11",
+        "from": "d2",
+        "to": "d14"
+      },
+      {
+        "from": "d7",
+        "to": "d15"
+      },
+      {
+        "from": "d8",
+        "to": "d4"
+      },
+      {
+        "from": "d8",
+        "to": "d12"
+      },
+      {
+        "from": "d13",
         "to": "d14"
       },
       {
         "from": "d14",
-        "to": "d13"
+        "to": "d7"
       },
       {
-        "from": "d8",
-        "to": "d6"
-      },
-      {
-        "from": "d8",
-        "to": "d11"
-      },
-      {
-        "from": "d8",
-        "to": "d1"
-      },
-      {
-        "from": "d10",
-        "to": "d6"
-      },
-      {
-        "from": "d10",
-        "to": "d11"
-      },
-      {
-        "from": "d2",
-        "to": "d17"
-      },
-      {
-        "from": "d2",
-        "to": "d9"
-      },
-      {
-        "from": "d2",
-        "to": "d18"
-      },
-      {
-        "from": "d12",
-        "to": "d9"
-      },
-      {
-        "from": "d15",
-        "to": "d5"
-      },
-      {
-        "from": "d18",
-        "to": "d17"
+        "from": "d14",
+        "to": "d15"
       },
       {
         "from": "d3",
-        "to": "d19"
-      },
-      {
-        "from": "d3",
-        "to": "d2"
-      },
-      {
-        "from": "d16",
-        "to": "d6"
-      },
-      {
-        "from": "d16",
-        "to": "d8"
-      },
-      {
-        "from": "d16",
-        "to": "d1"
+        "to": "d15"
       },
       {
         "from": "d4",
-        "to": "d5"
+        "to": "d6"
+      },
+      {
+        "from": "d4",
+        "to": "d12"
+      },
+      {
+        "from": "d6",
+        "to": "d12"
       }
     ]
   }
