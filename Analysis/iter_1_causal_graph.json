@@ -4,7 +4,11 @@
     "nodes": [
       "d1",
       "d2",
-      "d3"
+      "d3",
+      "d4",
+      "d5",
+      "d6",
+      "d7"
     ],
     "edges": [
       {
@@ -12,58 +16,148 @@
         "to": "d2",
         "type": "causal",
         "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Grain refinement increases high-angle boundary fraction"
+      },
+      {
+        "from": "d1",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Smaller grains require more dislocations for deformation"
+      },
+      {
+        "from": "d1",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Grain size controls subgrain formation scale"
+      },
+      {
+        "from": "d1",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
         "confidence": "high",
-        "reason": "smaller grains geometrically increase HAGB fraction"
+        "reason": "Grain boundary energy density increases with refinement"
       },
       {
         "from": "d2",
-        "to": "d1",
+        "to": "d7",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "HAGB mobility controls grain growth kinetics"
+        "confidence": "medium",
+        "reason": "Boundary character determines interfacial energy contribution"
       },
       {
         "from": "d3",
-        "to": "d2",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "texture constrains grain orientation distribution statistically"
-      },
-      {
-        "from": "d3",
-        "to": "d1",
+        "to": "d4",
         "type": "causal",
         "mechanism": "indirect",
         "confidence": "medium",
-        "reason": "texture drives selective growth via orientation"
-      }
-    ],
-    "cycles_resolved": [
+        "reason": "Texture affects slip system activity and storage"
+      },
       {
-        "cycle": [
-          "d1",
-          "d2",
-          "d1"
-        ],
-        "resolution": "bidirectional feedback loop physically valid",
-        "action": "retain both edges as mutual causation"
+        "from": "d3",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Crystallographic orientation controls elastic energy anisotropy"
+      },
+      {
+        "from": "d4",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation line energy contributes to stored energy"
+      },
+      {
+        "from": "d5",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates generate geometrically necessary dislocations"
+      },
+      {
+        "from": "d5",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Coherency strain and interfacial energy contribute"
+      },
+      {
+        "from": "d6",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Subgrain walls composed of organized dislocation arrays"
+      },
+      {
+        "from": "d6",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Subgrain boundaries store elastic energy"
       }
     ],
-    "notes": "d1-d2 forms feedback loop grain size and boundary character coevolve during processing",
+    "cycles_resolved": [],
+    "notes": "DAG represents microstructural hierarchy affecting stored energy. No cycles present.",
     "edges_cleaned": [
       {
         "from": "d1",
         "to": "d2"
       },
       {
-        "from": "d3",
-        "to": "d2"
+        "from": "d1",
+        "to": "d4"
+      },
+      {
+        "from": "d1",
+        "to": "d6"
+      },
+      {
+        "from": "d1",
+        "to": "d7"
+      },
+      {
+        "from": "d2",
+        "to": "d7"
+      },
+      {
+        "from": "d4",
+        "to": "d7"
+      },
+      {
+        "from": "d6",
+        "to": "d4"
+      },
+      {
+        "from": "d6",
+        "to": "d7"
       },
       {
         "from": "d3",
-        "to": "d1"
+        "to": "d4"
+      },
+      {
+        "from": "d3",
+        "to": "d7"
+      },
+      {
+        "from": "d5",
+        "to": "d4"
+      },
+      {
+        "from": "d5",
+        "to": "d7"
       }
     ]
   }
