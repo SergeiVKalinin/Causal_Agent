@@ -10,132 +10,96 @@
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d1->d8",
+        "edge": "d1->d6",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d1->d12",
+        "edge": "d1->d7",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d5->d8",
+        "edge": "d5->d7",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d8->d9",
+        "edge": "d7->d8",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d6->d11",
+        "edge": "d8->d6",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d6->d7",
+        "edge": "d8->d3",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d6->d10",
+        "edge": "d8->d4",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d9->d6",
+        "edge": "d3->d2",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d9->d10",
+        "edge": "d3->d6",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d9->d11",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d10->d11",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d7->d11",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d7->d10",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d3->d8",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d2->d13",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d12->d13",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d4->d2",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d4->d12",
+        "edge": "d2->d9",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       }
     ],
     "latent_nodes": [
-      "d8"
+      "d7"
     ],
     "cycles_removed": [
+      [
+        "d8",
+        "d1"
+      ],
+      [
+        "d6",
+        "d7"
+      ],
       [
         "d6",
         "d8"
       ],
       [
+        "d8",
+        "d7"
+      ],
+      [
         "d9",
         "d8"
       ],
       [
-        "d9",
-        "d1"
+        "d4",
+        "d5"
       ]
     ],
-    "gcastle_shd": 23,
+    "gcastle_shd": 17,
     "verdict": "none"
   }
 }
