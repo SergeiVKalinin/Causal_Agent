@@ -9,182 +9,222 @@
       "d5",
       "d6",
       "d7",
-      "d8",
-      "d9"
+      "d10",
+      "d11",
+      "d12",
+      "d13"
     ],
     "edges": [
       {
-        "from": "d6",
+        "from": "d1",
         "to": "d4",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Dislocation strain energy storage"
+        "reason": "Smaller grains accumulate dislocations through constrained slip"
       },
       {
-        "from": "d6",
-        "to": "d3",
+        "from": "d1",
+        "to": "d13",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Dislocations provide nucleation sites"
-      },
-      {
-        "from": "d4",
-        "to": "d3",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Stored energy drives recrystallization"
-      },
-      {
-        "from": "d3",
-        "to": "d1",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Recrystallization creates new grain structure"
-      },
-      {
-        "from": "d3",
-        "to": "d2",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Recrystallization alters crystallographic texture"
+        "reason": "Grain size determines topological neighbor count"
       },
       {
         "from": "d2",
-        "to": "d9",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Texture affects nucleation and growth kinetics"
+      },
+      {
+        "from": "d3",
+        "to": "d12",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Texture determines orientation differences"
+        "reason": "Elongation causes orientation spread within grains"
       },
       {
-        "from": "d9",
+        "from": "d3",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Elongation stores energy through lattice distortion"
+      },
+      {
+        "from": "d4",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocations directly contribute to stored energy"
+      },
+      {
+        "from": "d5",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Special boundaries reduce nucleation site availability"
+      },
+      {
+        "from": "d6",
         "to": "d5",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "GBCD derived from misorientation distribution"
+        "reason": "Twin boundaries constitute special boundary fraction"
       },
       {
-        "from": "d5",
-        "to": "d8",
+        "from": "d7",
+        "to": "d5",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Boundary character controls mobility"
+        "reason": "Misorientation angles define boundary character types"
       },
       {
-        "from": "d9",
-        "to": "d8",
+        "from": "d10",
+        "to": "d11",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Misorientation angle determines boundary mobility"
+        "reason": "Stored energy drives recrystallization nucleation and growth"
       },
       {
-        "from": "d8",
+        "from": "d11",
         "to": "d1",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Mobility drives grain growth"
+        "reason": "Recrystallization produces refined grain structure"
       },
       {
-        "from": "d7",
+        "from": "d11",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Recrystallization modifies crystallographic texture distribution"
+      },
+      {
+        "from": "d11",
         "to": "d4",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Elongated grains store deformation energy"
+        "confidence": "high",
+        "reason": "New grains nucleate with minimal dislocations"
       },
       {
-        "from": "d3",
-        "to": "d7",
+        "from": "d11",
+        "to": "d10",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Recrystallization produces equiaxed grains"
+        "confidence": "high",
+        "reason": "Recrystallization consumes stored energy during growth"
       },
       {
-        "from": "d6",
-        "to": "d7",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "Dislocation accumulation from deformation elongation"
-      },
-      {
-        "from": "d1",
-        "to": "d6",
+        "from": "d12",
+        "to": "d4",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Grain boundaries act as dislocation sources"
+        "confidence": "high",
+        "reason": "Orientation gradients generate geometrically necessary dislocations"
+      },
+      {
+        "from": "d12",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Local gradients contribute to total stored energy"
       }
     ],
     "cycles_resolved": [
       {
-        "cycle": "d6 -> d3 -> d1 -> d6",
-        "resolution": "Temporal separation: deformation then recrystallization",
-        "kept_edges": [
-          "d6->d3",
-          "d3->d1"
-        ]
+        "cycle": [
+          "d1",
+          "d4",
+          "d10",
+          "d11",
+          "d1"
+        ],
+        "resolution": "Temporal ordering: deformation then annealing stages",
+        "notes": "Physical process evolves through sequential stages"
+      },
+      {
+        "cycle": [
+          "d4",
+          "d10",
+          "d11",
+          "d4"
+        ],
+        "resolution": "Recrystallization feedback occurs after energy accumulation",
+        "notes": "Time-dependent process breaks logical cycle"
+      },
+      {
+        "cycle": [
+          "d10",
+          "d11",
+          "d10"
+        ],
+        "resolution": "Energy consumption follows accumulation temporally",
+        "notes": "Stored energy drives then depletes"
       }
     ],
-    "notes": "DAG represents deformation-recrystallization sequence with texture evolution",
+    "notes": "DAG represents deformation-annealing sequence with temporal ordering resolving feedback",
     "edges_cleaned": [
       {
-        "from": "d6",
+        "from": "d1",
         "to": "d4"
       },
       {
-        "from": "d6",
-        "to": "d3"
-      },
-      {
-        "from": "d6",
-        "to": "d7"
+        "from": "d1",
+        "to": "d13"
       },
       {
         "from": "d4",
-        "to": "d3"
+        "to": "d10"
       },
       {
-        "from": "d3",
-        "to": "d1"
-      },
-      {
-        "from": "d3",
+        "from": "d11",
         "to": "d2"
       },
       {
         "from": "d3",
-        "to": "d7"
+        "to": "d12"
       },
       {
-        "from": "d2",
-        "to": "d9"
+        "from": "d3",
+        "to": "d10"
       },
       {
-        "from": "d9",
-        "to": "d5"
+        "from": "d12",
+        "to": "d4"
       },
       {
-        "from": "d9",
-        "to": "d8"
+        "from": "d12",
+        "to": "d10"
+      },
+      {
+        "from": "d10",
+        "to": "d11"
       },
       {
         "from": "d5",
-        "to": "d8"
+        "to": "d11"
       },
       {
-        "from": "d8",
-        "to": "d1"
+        "from": "d6",
+        "to": "d5"
+      },
+      {
+        "from": "d7",
+        "to": "d5"
       }
     ]
   }
