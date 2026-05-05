@@ -1,0 +1,169 @@
+{
+  "iteration": 1,
+  "causal_graph": {
+    "nodes": [
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "d5",
+      "d6",
+      "d7",
+      "d8",
+      "d9"
+    ],
+    "edges": [
+      {
+        "from": "d1",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Smaller grains increase boundary area per unit volume geometrically."
+      },
+      {
+        "from": "d4",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation stored energy provides thermodynamic driving force for recrystallization."
+      },
+      {
+        "from": "d9",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallization nucleates new grains changing size distribution."
+      },
+      {
+        "from": "d9",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallized grains are dislocation-free, reducing overall dislocation density."
+      },
+      {
+        "from": "d6",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Low stacking fault energy inhibits dislocation cross-slip and recovery."
+      },
+      {
+        "from": "d5",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates exert Zener pinning pressure restricting grain boundary migration."
+      },
+      {
+        "from": "d3",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Strong texture constrains grain orientations, narrowing misorientation distribution."
+      },
+      {
+        "from": "d8",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Grain elongation from deformation strengthens crystallographic texture alignment."
+      },
+      {
+        "from": "d1",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "low",
+        "reason": "Grain size influences boundary character through grain growth kinetics."
+      },
+      {
+        "from": "d5",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates pin boundaries, inhibiting recrystallization nucleation and growth."
+      },
+      {
+        "from": "d7",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "High boundary density provides more nucleation sites for recrystallization."
+      },
+      {
+        "from": "d8",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Elongated grains result from deformation which increases dislocation density."
+      }
+    ],
+    "cycles_resolved": [
+      {
+        "cycle": "d4 -> d9 -> d4",
+        "resolution": "Temporal separation: dislocation accumulation precedes recrystallization which then reduces dislocations.",
+        "method": "Dynamic process stages prevent logical cycle in steady-state DAG."
+      },
+      {
+        "cycle": "d9 -> d1 -> d7 -> d9",
+        "resolution": "Removed d7->d9 or accept temporal dynamics where recrystallization evolves microstructure.",
+        "method": "Retained d7->d9 as nucleation site effect is distinct mechanism."
+      }
+    ],
+    "notes": "DAG represents steady-state causal structure. Temporal cycles resolved through process staging.",
+    "edges_cleaned": [
+      {
+        "from": "d1",
+        "to": "d7"
+      },
+      {
+        "from": "d1",
+        "to": "d2"
+      },
+      {
+        "from": "d7",
+        "to": "d9"
+      },
+      {
+        "from": "d9",
+        "to": "d4"
+      },
+      {
+        "from": "d6",
+        "to": "d4"
+      },
+      {
+        "from": "d5",
+        "to": "d1"
+      },
+      {
+        "from": "d5",
+        "to": "d9"
+      },
+      {
+        "from": "d3",
+        "to": "d2"
+      },
+      {
+        "from": "d8",
+        "to": "d3"
+      },
+      {
+        "from": "d8",
+        "to": "d4"
+      }
+    ]
+  }
+}
