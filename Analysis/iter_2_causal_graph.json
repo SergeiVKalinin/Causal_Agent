@@ -8,7 +8,11 @@
       "d4",
       "d5",
       "d6",
-      "d7"
+      "d7",
+      "d8",
+      "d9",
+      "d10",
+      "d11"
     ],
     "edges": [
       {
@@ -17,23 +21,31 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Grain size directly determines boundary density"
+        "reason": "Geometric relationship: grain boundary density inversely proportional"
       },
       {
         "from": "d1",
-        "to": "d6",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Smaller grains constrain dislocation motion accumulation"
-      },
-      {
-        "from": "d1",
-        "to": "d7",
+        "to": "d8",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Grain size sets subgrain length scale"
+        "reason": "Smaller grains store more deformation energy"
+      },
+      {
+        "from": "d1",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Fine grains accommodate more local deformation"
+      },
+      {
+        "from": "d2",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "High angle boundaries store interfacial energy"
       },
       {
         "from": "d3",
@@ -41,23 +53,23 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Aspect ratio determines grain boundary area"
+        "reason": "Elongated grains increase boundary area per volume"
       },
       {
         "from": "d4",
-        "to": "d2",
+        "to": "d8",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Texture controls grain orientation distribution statistics"
+        "confidence": "low",
+        "reason": "Strong texture indicates directional deformation and storage"
       },
       {
-        "from": "d4",
-        "to": "d6",
+        "from": "d5",
+        "to": "d8",
         "type": "causal",
-        "mechanism": "indirect",
+        "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Texture affects slip activity and accumulation"
+        "reason": "Grain boundaries contribute interfacial stored energy"
       },
       {
         "from": "d6",
@@ -65,36 +77,118 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Dislocation density drives subgrain wall formation"
+        "reason": "Dislocations rearrange into low-angle subgrain boundaries"
       },
       {
         "from": "d6",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation strain fields store elastic energy"
+      },
+      {
+        "from": "d6",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocations create intragranular orientation gradients"
+      },
+      {
+        "from": "d6",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocations cause local lattice misorientations measured KAM"
+      },
+      {
+        "from": "d7",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Subgrain misorientations increase grain orientation spread"
+      },
+      {
+        "from": "d7",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Subgrain boundaries contribute to local misorientation"
+      },
+      {
+        "from": "d8",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Stored energy provides thermodynamic driving force"
+      },
+      {
+        "from": "d9",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallized grains grow larger than deformed grains"
+      },
+      {
+        "from": "d9",
         "to": "d2",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Dislocation rearrangement creates subgrain misorientation evolution"
+        "reason": "Recrystallization creates new high-angle grain boundaries"
       },
       {
-        "from": "d2",
-        "to": "d6",
+        "from": "d9",
+        "to": "d4",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "High angle boundaries accommodate strain reducing"
+        "reason": "Random nucleation can weaken deformation texture"
+      },
+      {
+        "from": "d9",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "New grains nucleate dislocation-free reducing overall density"
+      },
+      {
+        "from": "d9",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallization eliminates subgrain structure in new grains"
       }
     ],
     "cycles_resolved": [
       {
-        "cycle": [
-          "d2",
-          "d6"
-        ],
-        "resolution": "Retain both edges representing dynamic equilibrium",
-        "justification": "Feedback loop during deformation and recovery"
+        "cycle": "d1 -> d8 -> d9 -> d1",
+        "resolution": "Temporal sequence: deformation precedes recrystallization response",
+        "kept_edges": [
+          "d1->d8",
+          "d8->d9",
+          "d9->d1"
+        ]
+      },
+      {
+        "cycle": "d6 -> d8 -> d9 -> d6",
+        "resolution": "Process evolution: dislocations accumulate then annihilate",
+        "kept_edges": [
+          "d6->d8",
+          "d8->d9",
+          "d9->d6"
+        ]
       }
     ],
-    "notes": "Cycle d2-d6 represents physical feedback during thermomechanical processing",
+    "notes": "DAG represents deformation-recrystallization sequence. Cycles resolved through temporal causality: microstructure evolves deformation to recrystallization.",
     "edges_cleaned": [
       {
         "from": "d1",
@@ -102,31 +196,59 @@
       },
       {
         "from": "d1",
-        "to": "d6"
+        "to": "d8"
       },
       {
         "from": "d1",
-        "to": "d7"
+        "to": "d11"
       },
       {
-        "from": "d6",
-        "to": "d7"
+        "from": "d5",
+        "to": "d8"
       },
       {
-        "from": "d6",
-        "to": "d2"
+        "from": "d8",
+        "to": "d9"
       },
       {
         "from": "d3",
         "to": "d5"
       },
       {
-        "from": "d4",
+        "from": "d6",
+        "to": "d7"
+      },
+      {
+        "from": "d6",
+        "to": "d10"
+      },
+      {
+        "from": "d6",
+        "to": "d11"
+      },
+      {
+        "from": "d7",
+        "to": "d10"
+      },
+      {
+        "from": "d7",
+        "to": "d11"
+      },
+      {
+        "from": "d9",
         "to": "d2"
       },
       {
-        "from": "d4",
+        "from": "d9",
+        "to": "d4"
+      },
+      {
+        "from": "d9",
         "to": "d6"
+      },
+      {
+        "from": "d9",
+        "to": "d7"
       }
     ]
   }
