@@ -1,0 +1,194 @@
+{
+  "iteration": 3,
+  "descriptors": [
+    {
+      "id": "d1",
+      "name": "grain size",
+      "physical_meaning": "Average dimension of crystalline grains in material",
+      "units": "micrometers",
+      "rationale": "Controls mechanical properties and recrystallization kinetics",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "Often log-normal distributed in materials"
+      },
+      "quality": {
+        "bijective": true,
+        "lossy": false,
+        "loss_reason": null,
+        "truncation_error": null,
+        "ambiguity_risk": "low",
+        "notes": "Direct scalar mapping preserves full information"
+      }
+    },
+    {
+      "id": "d2",
+      "name": "grain boundary misorientation",
+      "physical_meaning": "Angular distribution of crystallographic orientation differences",
+      "units": "degrees (binned)",
+      "rationale": "Determines boundary energy and mobility in recrystallization",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "histogram bins",
+        "dimension": "10",
+        "notes": "Discretized misorientation angle distribution"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Histogram binning loses continuous distribution details",
+        "truncation_error": "depends on bin width",
+        "ambiguity_risk": "medium",
+        "notes": "Binning discards intra-bin variation information"
+      }
+    },
+    {
+      "id": "d3",
+      "name": "grain aspect ratio",
+      "physical_meaning": "Ratio of longest to shortest grain dimension",
+      "units": "dimensionless",
+      "rationale": "Indicates grain elongation from deformation history",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "Values greater than or equal to one"
+      },
+      "quality": {
+        "bijective": true,
+        "lossy": false,
+        "loss_reason": null,
+        "truncation_error": null,
+        "ambiguity_risk": "low",
+        "notes": "Single value captures elongation without loss"
+      }
+    },
+    {
+      "id": "d4",
+      "name": "texture intensity",
+      "physical_meaning": "Degree of preferred crystallographic orientation",
+      "units": "dimensionless (J-index)",
+      "rationale": "Affects anisotropic properties and recrystallization behavior",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "Typically J-index or texture coefficient"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Single index loses full orientation distribution",
+        "truncation_error": "moderate",
+        "ambiguity_risk": "high",
+        "notes": "Different textures can yield identical intensity"
+      }
+    },
+    {
+      "id": "d5",
+      "name": "grain boundary density",
+      "physical_meaning": "Total grain boundary area per unit volume",
+      "units": "micrometers^-1",
+      "rationale": "Provides nucleation sites and affects energy",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "Inversely related to grain size"
+      },
+      "quality": {
+        "bijective": true,
+        "lossy": false,
+        "loss_reason": null,
+        "truncation_error": null,
+        "ambiguity_risk": "low",
+        "notes": "Direct measurement preserves information fully"
+      }
+    },
+    {
+      "id": "d6",
+      "name": "dislocation density",
+      "physical_meaning": "Total dislocation line length per unit volume",
+      "units": "m^-2",
+      "rationale": "Drives recrystallization through stored energy",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "Typically ranges 10^12 to 10^16"
+      },
+      "quality": {
+        "bijective": true,
+        "lossy": false,
+        "loss_reason": null,
+        "truncation_error": null,
+        "ambiguity_risk": "medium",
+        "notes": "Loses spatial distribution of dislocations"
+      }
+    },
+    {
+      "id": "d7",
+      "name": "subgrain structure",
+      "physical_meaning": "Low-angle boundaries within deformed grains",
+      "units": "micrometers, degrees",
+      "rationale": "Precursor structures for recrystallization nucleation",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "subgrain size and misorientation",
+        "dimension": "3",
+        "notes": "Average size, density, and misorientation angle"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Averages lose distribution and spatial heterogeneity",
+        "truncation_error": "moderate",
+        "ambiguity_risk": "high",
+        "notes": "Three values inadequate for complex substructures"
+      }
+    },
+    {
+      "id": "d8",
+      "name": "stored energy",
+      "physical_meaning": "Thermodynamic driving force from deformation",
+      "units": "J/m^3",
+      "rationale": "Quantifies recrystallization driving force directly",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "Sum of dislocation and interface energy"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Sum obscures individual energy component contributions",
+        "truncation_error": "low",
+        "ambiguity_risk": "medium",
+        "notes": "Aggregation loses dislocation versus boundary energy"
+      }
+    },
+    {
+      "id": "d9",
+      "name": "recrystallization fraction",
+      "physical_meaning": "Volume fraction of recrystallized material",
+      "units": "dimensionless (0-1)",
+      "rationale": "Direct measure of transformation progress",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "Bounded between zero and one"
+      },
+      "quality": {
+        "bijective": true,
+        "lossy": false,
+        "loss_reason": null,
+        "truncation_error": null,
+        "ambiguity_risk": "low",
+        "notes": "Complete representation of transformation state"
+      }
+    }
+  ]
+}
