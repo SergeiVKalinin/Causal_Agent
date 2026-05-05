@@ -4,13 +4,25 @@
     "method": "do-calculus (pgmpy) + gCastle PC",
     "results": [
       {
-        "edge": "d3->d1",
+        "edge": "d6->d4",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d3->d4",
+        "edge": "d6->d3",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d4->d3",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d3->d1",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
@@ -22,45 +34,59 @@
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d3->d5",
+        "edge": "d3->d7",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d1->d2",
+        "edge": "d1->d9",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d1->d5",
+        "edge": "d2->d9",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d4->d1",
+        "edge": "d9->d5",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       },
       {
-        "edge": "d4->d2",
-        "identifiable": false,
-        "criterion": null,
-        "reason": "no valid adjustment set found"
-      },
-      {
-        "edge": "d2->d5",
+        "edge": "d5->d8",
         "identifiable": false,
         "criterion": null,
         "reason": "no valid adjustment set found"
       }
     ],
-    "latent_nodes": [],
-    "cycles_removed": [],
-    "gcastle_shd": 9,
+    "latent_nodes": [
+      "d8",
+      "d4"
+    ],
+    "cycles_removed": [
+      [
+        "d8",
+        "d3"
+      ],
+      [
+        "d3",
+        "d6"
+      ],
+      [
+        "d7",
+        "d4"
+      ],
+      [
+        "d7",
+        "d3"
+      ]
+    ],
+    "gcastle_shd": 13,
     "verdict": "none"
   }
 }
