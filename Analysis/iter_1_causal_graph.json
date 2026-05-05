@@ -6,200 +6,72 @@
       "d2",
       "d3",
       "d4",
-      "d5",
-      "d6",
-      "d7",
-      "d8",
-      "d9",
-      "d10",
-      "d11"
+      "d5"
     ],
     "edges": [
       {
         "from": "d1",
-        "to": "d7",
+        "to": "d5",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Grain boundary density inversely proportional to grain size geometrically"
-      },
-      {
-        "from": "d1",
-        "to": "d4",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Smaller grains constrain dislocation motion increasing density during deformation"
-      },
-      {
-        "from": "d4",
-        "to": "d11",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Dislocation density drives subgrain cell formation"
-      },
-      {
-        "from": "d6",
-        "to": "d4",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Low stacking fault energy promotes dislocation multiplication"
-      },
-      {
-        "from": "d6",
-        "to": "d10",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Low stacking fault energy favors twin formation"
-      },
-      {
-        "from": "d5",
-        "to": "d1",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Precipitates pin grain boundaries limiting growth via Zener drag"
-      },
-      {
-        "from": "d9",
-        "to": "d4",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Recrystallization eliminates dislocations from deformed matrix"
-      },
-      {
-        "from": "d4",
-        "to": "d9",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Dislocation density provides stored energy for recrystallization nucleation"
+        "reason": "Smaller grains increase boundary area per volume"
       },
       {
         "from": "d3",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Elongated grains increase total boundary area"
+      },
+      {
+        "from": "d4",
         "to": "d2",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Strong texture constrains grain misorientation distribution"
-      },
-      {
-        "from": "d8",
-        "to": "d7",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Elongated grains increase surface-to-volume ratio geometrically"
-      },
-      {
-        "from": "d5",
-        "to": "d4",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Precipitates obstruct dislocation motion via Orowan mechanism"
-      },
-      {
-        "from": "d10",
-        "to": "d7",
-        "type": "causal",
-        "mechanism": "direct",
         "confidence": "high",
-        "reason": "Twin boundaries contribute to total grain boundary density"
+        "reason": "Strong texture constrains grain orientation distribution"
       },
       {
-        "from": "d9",
-        "to": "d1",
+        "from": "d2",
+        "to": "d5",
         "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Recrystallization creates new grains affecting grain size distribution"
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Misorientation affects boundary energy and grain topology"
       },
       {
-        "from": "d9",
+        "from": "d1",
         "to": "d3",
         "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Recrystallization weakens or randomizes texture from deformation"
-      },
-      {
-        "from": "d11",
-        "to": "d7",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Subgrain boundaries contribute to total boundary density"
+        "mechanism": "indirect",
+        "confidence": "low",
+        "reason": "Grain growth kinetics can produce anisotropic morphology"
       }
     ],
-    "cycles_resolved": [
-      {
-        "cycle": [
-          "d4",
-          "d9",
-          "d4"
-        ],
-        "resolution": "Bidirectional feedback loop retained; both directions physically valid",
-        "notes": "Temporal separation: dislocation density drives recrystallization which then reduces dislocation density"
-      }
-    ],
-    "notes": "Added d9\u2192d1, d9\u2192d3, d11\u2192d7 from first principles. Retained d4\u2194d9 cycle as valid feedback.",
+    "cycles_resolved": [],
+    "notes": "Promoted correlations to causal based on physical mechanisms. Added grain size to aspect ratio link.",
     "edges_cleaned": [
       {
         "from": "d1",
-        "to": "d7"
+        "to": "d5"
       },
       {
         "from": "d1",
-        "to": "d4"
-      },
-      {
-        "from": "d4",
-        "to": "d11"
-      },
-      {
-        "from": "d4",
-        "to": "d9"
-      },
-      {
-        "from": "d11",
-        "to": "d7"
-      },
-      {
-        "from": "d6",
-        "to": "d4"
-      },
-      {
-        "from": "d6",
-        "to": "d10"
-      },
-      {
-        "from": "d10",
-        "to": "d7"
-      },
-      {
-        "from": "d5",
-        "to": "d1"
-      },
-      {
-        "from": "d5",
-        "to": "d4"
-      },
-      {
-        "from": "d9",
         "to": "d3"
       },
       {
         "from": "d3",
+        "to": "d5"
+      },
+      {
+        "from": "d4",
         "to": "d2"
       },
       {
-        "from": "d8",
-        "to": "d7"
+        "from": "d2",
+        "to": "d5"
       }
     ]
   }
