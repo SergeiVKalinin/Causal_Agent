@@ -1,0 +1,170 @@
+{
+  "iteration": 3,
+  "causal_graph": {
+    "nodes": [
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "d5",
+      "d6",
+      "d7"
+    ],
+    "edges": [
+      {
+        "from": "d1",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "high",
+        "reason": "Grain size determines dislocation accumulation capacity"
+      },
+      {
+        "from": "d1",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Grain size constrains subgrain formation scale"
+      },
+      {
+        "from": "d1",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Grain size influences boundary misorientation distribution"
+      },
+      {
+        "from": "d3",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Texture determines grain boundary character distribution"
+      },
+      {
+        "from": "d5",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates obstruct dislocation motion, increase density"
+      },
+      {
+        "from": "d5",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Precipitates pin subgrain boundaries during recovery"
+      },
+      {
+        "from": "d6",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Subgrains form via dislocation rearrangement mechanisms"
+      },
+      {
+        "from": "d4",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation strain fields directly store elastic energy"
+      },
+      {
+        "from": "d6",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Subgrain boundaries contribute misorientation strain energy"
+      },
+      {
+        "from": "d5",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates create interfacial and coherency strain energy"
+      },
+      {
+        "from": "d2",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Grain boundary character determines interface energy contribution"
+      },
+      {
+        "from": "d3",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Texture modulates elastic anisotropy and stored energy"
+      }
+    ],
+    "cycles_resolved": [
+      {
+        "cycle": "d6 -> d4 -> d7 and d6 -> d7",
+        "resolution": "Both paths valid: subgrains affect dislocations and energy",
+        "action": "Retained both causal paths"
+      }
+    ],
+    "notes": "All correlational edges promoted to causal with clear physical mechanisms",
+    "edges_cleaned": [
+      {
+        "from": "d1",
+        "to": "d4"
+      },
+      {
+        "from": "d1",
+        "to": "d6"
+      },
+      {
+        "from": "d1",
+        "to": "d2"
+      },
+      {
+        "from": "d4",
+        "to": "d7"
+      },
+      {
+        "from": "d6",
+        "to": "d4"
+      },
+      {
+        "from": "d6",
+        "to": "d7"
+      },
+      {
+        "from": "d2",
+        "to": "d7"
+      },
+      {
+        "from": "d3",
+        "to": "d2"
+      },
+      {
+        "from": "d3",
+        "to": "d7"
+      },
+      {
+        "from": "d5",
+        "to": "d4"
+      },
+      {
+        "from": "d5",
+        "to": "d6"
+      },
+      {
+        "from": "d5",
+        "to": "d7"
+      }
+    ]
+  }
+}
