@@ -6,105 +6,220 @@
       "d2",
       "d3",
       "d4",
-      "d5"
+      "d5",
+      "d6",
+      "d7",
+      "d8",
+      "d9"
     ],
     "edges": [
       {
-        "from": "d4",
+        "from": "d2",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Phase controls precipitate solubility thermodynamically"
+      },
+      {
+        "from": "d7",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates pin boundaries preventing grain growth"
+      },
+      {
+        "from": "d7",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Precipitates pin dislocations via Orowan mechanism"
+      },
+      {
+        "from": "d7",
         "to": "d1",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Dislocation density drives dynamic recrystallization and refinement"
+        "reason": "Coherency strains from precipitate volume mismatch"
       },
       {
-        "from": "d1",
-        "to": "d2",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Grain size controls boundary character distribution statistically"
-      },
-      {
-        "from": "d4",
-        "to": "d2",
+        "from": "d6",
+        "to": "d1",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Dislocations geometrically determine boundary misorientation angles"
+        "reason": "Dislocation stress fields generate residual stress"
       },
       {
-        "from": "d3",
-        "to": "d5",
+        "from": "d2",
+        "to": "d1",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Texture drives anisotropic grain growth morphology"
+        "confidence": "high",
+        "reason": "Transformation strains create residual stress"
       },
       {
         "from": "d5",
-        "to": "d2",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Elongation creates low-angle boundaries from deformation"
-      },
-      {
-        "from": "d3",
         "to": "d1",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Texture anisotropy constrains grain growth kinetics"
+        "reason": "Texture causes anisotropic thermal expansion stress"
       },
       {
-        "from": "d5",
+        "from": "d3",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Finer grains accommodate higher dislocation density"
+      },
+      {
+        "from": "d3",
         "to": "d4",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Elongated grains accumulate more geometrically necessary dislocations"
-      }
-    ],
-    "cycles_resolved": [
-      {
-        "cycle": [
-          "d1",
-          "d4"
-        ],
-        "resolution": "Kept both edges as feedback loop",
-        "reason": "Physical bidirectional relationship during deformation-recrystallization cycles"
-      }
-    ],
-    "notes": "Feedback loop d1-d4 represents dynamic equilibrium during thermomechanical processing",
-    "edges_cleaned": [
-      {
-        "from": "d4",
-        "to": "d1"
-      },
-      {
-        "from": "d4",
-        "to": "d2"
-      },
-      {
-        "from": "d1",
-        "to": "d2"
+        "reason": "Grain refinement increases low-angle boundary fraction"
       },
       {
         "from": "d3",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Finer grains promote twin boundary formation"
+      },
+      {
+        "from": "d6",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Dislocations organize into low-angle grain boundaries"
+      },
+      {
+        "from": "d9",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Twins accommodate strain reducing dislocation requirement"
+      },
+      {
+        "from": "d5",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Texture determines crystallographic twinning propensity"
+      },
+      {
+        "from": "d5",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Deformation creating texture also elongates grains"
+      },
+      {
+        "from": "d8",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "low",
+        "reason": "Grain elongation constrains deformation generating stress"
+      },
+      {
+        "from": "d2",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Phase determines crystallographic slip system availability"
+      },
+      {
+        "from": "d2",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Phase affects grain boundary mobility and stability"
+      }
+    ],
+    "cycles_resolved": [],
+    "notes": "All correlational edges promoted to causal. Added phase effects on texture and grain size.",
+    "edges_cleaned": [
+      {
+        "from": "d2",
+        "to": "d7"
+      },
+      {
+        "from": "d2",
+        "to": "d1"
+      },
+      {
+        "from": "d2",
         "to": "d5"
       },
       {
+        "from": "d2",
+        "to": "d3"
+      },
+      {
+        "from": "d7",
+        "to": "d3"
+      },
+      {
+        "from": "d7",
+        "to": "d6"
+      },
+      {
+        "from": "d7",
+        "to": "d1"
+      },
+      {
         "from": "d3",
+        "to": "d6"
+      },
+      {
+        "from": "d3",
+        "to": "d4"
+      },
+      {
+        "from": "d3",
+        "to": "d9"
+      },
+      {
+        "from": "d6",
+        "to": "d1"
+      },
+      {
+        "from": "d6",
+        "to": "d4"
+      },
+      {
+        "from": "d5",
         "to": "d1"
       },
       {
         "from": "d5",
-        "to": "d2"
+        "to": "d9"
       },
       {
         "from": "d5",
-        "to": "d4"
+        "to": "d8"
+      },
+      {
+        "from": "d9",
+        "to": "d6"
+      },
+      {
+        "from": "d8",
+        "to": "d1"
       }
     ]
   }
