@@ -1,0 +1,65 @@
+{
+  "iteration": 2,
+  "identifiability_analysis": {
+    "method": "do-calculus (pgmpy) + gCastle PC",
+    "results": [
+      {
+        "edge": "d1->d5",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d1->d6",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d1->d7",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d6->d7",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d6->d2",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d3->d5",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d4->d2",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      },
+      {
+        "edge": "d4->d6",
+        "identifiable": false,
+        "criterion": null,
+        "reason": "no valid adjustment set found"
+      }
+    ],
+    "latent_nodes": [],
+    "cycles_removed": [
+      [
+        "d2",
+        "d6"
+      ]
+    ],
+    "gcastle_shd": 9,
+    "verdict": "none"
+  }
+}
