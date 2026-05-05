@@ -3,107 +3,191 @@
   "descriptors": [
     {
       "id": "d1",
-      "name": "grain size",
-      "physical_meaning": "characteristic dimension of crystalline grains",
-      "units": "micrometers or nanometers",
-      "rationale": "controls strength, ductility via Hall-Petch relationship",
+      "name": "residual stress state",
+      "physical_meaning": "internal stress distribution without external loads",
+      "units": "MPa per point",
+      "rationale": "stress tensor fully characterizes residual stress field",
       "representation": {
-        "type": "scalar",
-        "encoding": "continuous positive real number",
-        "dimension": "1",
-        "notes": "log-scale often used for wide ranges"
+        "type": "finite_vector",
+        "encoding": "six independent tensor components per point",
+        "dimension": "6N",
+        "notes": "N spatial points, symmetric stress tensor"
       },
       "quality": {
         "bijective": false,
         "lossy": true,
-        "loss_reason": "reduces full distribution to single value",
-        "truncation_error": "high for multimodal distributions",
-        "ambiguity_risk": "high",
-        "notes": "mean, median, mode yield different values"
+        "loss_reason": "spatial discretization loses continuous field information",
+        "truncation_error": "depends on grid resolution N",
+        "ambiguity_risk": "medium",
+        "notes": "finite sampling cannot capture all spatial variations"
       }
     },
     {
       "id": "d2",
-      "name": "grain boundary character",
-      "physical_meaning": "fraction of special low-energy grain boundaries",
-      "units": "dimensionless fraction",
-      "rationale": "influences corrosion resistance and crack propagation",
+      "name": "phase composition",
+      "physical_meaning": "relative amount of each phase present",
+      "units": "volume fraction",
+      "rationale": "volume fractions define phase distribution completely",
       "representation": {
-        "type": "scalar",
-        "encoding": "continuous bounded [0,1]",
-        "dimension": "1",
-        "notes": "can expand to distribution over \u03a3 values"
-      },
-      "quality": {
-        "bijective": false,
-        "lossy": true,
-        "loss_reason": "collapses boundary misorientation distribution",
-        "truncation_error": "medium to high",
-        "ambiguity_risk": "high",
-        "notes": "loses specific \u03a3 type information"
-      }
-    },
-    {
-      "id": "d3",
-      "name": "texture intensity",
-      "physical_meaning": "degree of crystallographic orientation alignment",
-      "units": "times random (multiples of uniform)",
-      "rationale": "affects anisotropic mechanical and physical properties",
-      "representation": {
-        "type": "scalar",
-        "encoding": "continuous positive real, minimum unity",
-        "dimension": "1",
-        "notes": "full ODF needs truncated harmonic expansion"
-      },
-      "quality": {
-        "bijective": false,
-        "lossy": true,
-        "loss_reason": "reduces ODF to single intensity metric",
-        "truncation_error": "high for complex textures",
-        "ambiguity_risk": "high",
-        "notes": "loses texture component and symmetry information"
-      }
-    },
-    {
-      "id": "d4",
-      "name": "dislocation density",
-      "physical_meaning": "line length of dislocations per volume",
-      "units": "per square meter",
-      "rationale": "indicates work hardening state and strength",
-      "representation": {
-        "type": "scalar",
-        "encoding": "continuous non-negative real",
-        "dimension": "1",
-        "notes": "log-scale common, ranges 10^10 to 10^16"
+        "type": "finite_vector",
+        "encoding": "volume fraction per phase",
+        "dimension": "M-1",
+        "notes": "M phases, simplex constraint reduces dimension"
       },
       "quality": {
         "bijective": true,
         "lossy": false,
         "loss_reason": null,
-        "truncation_error": "low with appropriate measurement",
+        "truncation_error": null,
         "ambiguity_risk": "low",
-        "notes": "well-defined physical quantity, direct encoding"
+        "notes": "complete representation for spatially averaged composition"
       }
     },
     {
-      "id": "d5",
-      "name": "grain aspect ratio",
-      "physical_meaning": "ratio of longest to shortest grain dimension",
-      "units": "dimensionless ratio",
-      "rationale": "indicates processing history and directional properties",
+      "id": "d3",
+      "name": "grain size",
+      "physical_meaning": "characteristic dimension of crystalline grains",
+      "units": "micrometers",
+      "rationale": "single value summarizes grain population size",
       "representation": {
         "type": "scalar",
-        "encoding": "continuous real, lower bound unity",
+        "encoding": "mean grain diameter",
         "dimension": "1",
-        "notes": "distribution over grains often informative"
+        "notes": "assumes monomodal distribution approximation"
       },
       "quality": {
         "bijective": false,
         "lossy": true,
-        "loss_reason": "reduces grain shape distribution to average",
-        "truncation_error": "medium for heterogeneous microstructures",
+        "loss_reason": "discards entire size distribution beyond mean",
+        "truncation_error": "variance and higher moments lost",
+        "ambiguity_risk": "high",
+        "notes": "many distributions share same mean value"
+      }
+    },
+    {
+      "id": "d4",
+      "name": "grain boundary character",
+      "physical_meaning": "distribution of grain boundary misorientation angles",
+      "units": "fraction per bin",
+      "rationale": "histogram captures misorientation angle distribution",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "binned angle histogram",
+        "dimension": "K",
+        "notes": "K bins from 0 to 62.8 degrees"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "binning loses exact angle values",
+        "truncation_error": "discretization error proportional to bin width",
         "ambiguity_risk": "medium",
-        "notes": "loses orientation and spatial arrangement information"
+        "notes": "loses spatial correlations between grain boundaries"
+      }
+    },
+    {
+      "id": "d5",
+      "name": "crystallographic texture",
+      "physical_meaning": "orientation distribution function of crystallites",
+      "units": "dimensionless coefficients",
+      "rationale": "spherical harmonics form complete basis for functions",
+      "representation": {
+        "type": "truncated_basis",
+        "encoding": "spherical harmonic coefficients",
+        "dimension": "L^2",
+        "notes": "truncated at degree L for cubic symmetry"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "truncation discards high-frequency orientation features",
+        "truncation_error": "decreases with increasing L",
+        "ambiguity_risk": "low",
+        "notes": "well-controlled approximation with known convergence properties"
+      }
+    },
+    {
+      "id": "d6",
+      "name": "dislocation density",
+      "physical_meaning": "total line length of dislocations per volume",
+      "units": "per square meter",
+      "rationale": "scalar summarizes dislocation content in material",
+      "representation": {
+        "type": "scalar",
+        "encoding": "total density value",
+        "dimension": "1",
+        "notes": "spatially averaged over representative volume"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "spatial distribution and dislocation types lost",
+        "truncation_error": "all microstructural detail beyond total density",
+        "ambiguity_risk": "high",
+        "notes": "ignores dislocation character and arrangement"
+      }
+    },
+    {
+      "id": "d7",
+      "name": "precipitate distribution",
+      "physical_meaning": "spatial arrangement of second-phase particles",
+      "units": "nanometers for both",
+      "rationale": "size and spacing characterize dispersion",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "mean size and spacing",
+        "dimension": "2",
+        "notes": "assumes monodisperse spherical precipitate approximation"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "size distribution, shape, and spatial correlations lost",
+        "truncation_error": "all distribution moments beyond first",
+        "ambiguity_risk": "high",
+        "notes": "strong assumptions on precipitate morphology"
+      }
+    },
+    {
+      "id": "d8",
+      "name": "grain aspect ratio",
+      "physical_meaning": "elongation measure of grain shape",
+      "units": "dimensionless ratio",
+      "rationale": "single value characterizes grain elongation",
+      "representation": {
+        "type": "scalar",
+        "encoding": "aspect ratio value",
+        "dimension": "1",
+        "notes": "averaged over grain population"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "distribution of aspect ratios and orientation lost",
+        "truncation_error": "variance and directional information discarded",
+        "ambiguity_risk": "high",
+        "notes": "different grain populations yield same average"
+      }
+    },
+    {
+      "id": "d9",
+      "name": "twin boundary fraction",
+      "physical_meaning": "proportion of special grain boundaries",
+      "units": "percent",
+      "rationale": "fraction quantifies twin boundary prevalence",
+      "representation": {
+        "type": "scalar",
+        "encoding": "percentage value",
+        "dimension": "1",
+        "notes": "\u03a33 twin boundaries typically"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "spatial distribution and network topology lost",
+        "truncation_error": "all information beyond total fraction",
+        "ambiguity_risk": "high",
+        "notes": "ignores twin boundary connectivity and arrangement"
       }
     }
   ]
