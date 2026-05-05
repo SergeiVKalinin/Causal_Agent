@@ -1,0 +1,194 @@
+{
+  "iteration": 1,
+  "descriptors": [
+    {
+      "id": "d1",
+      "name": "grain size",
+      "physical_meaning": "Average diameter of crystalline grains in the microstructure",
+      "units": "micrometers",
+      "rationale": "Controls strength via Hall-Petch relation and diffusion kinetics",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous positive real number",
+        "dimension": "1",
+        "notes": "Often log-normal distributed; mean or median grain diameter"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Full distribution collapsed to single scalar statistic",
+        "truncation_error": "spatial heterogeneity and distribution shape lost",
+        "ambiguity_risk": "medium",
+        "notes": "Mean vs median choice affects representation; distribution information discarded"
+      }
+    },
+    {
+      "id": "d2",
+      "name": "grain boundary misorientation",
+      "physical_meaning": "Angular difference in crystallographic orientation across grain boundaries",
+      "units": "degrees",
+      "rationale": "Determines boundary energy, mobility, and deformation resistance",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "distribution histogram or mean/standard deviation",
+        "dimension": "2-10",
+        "notes": "Statistics of misorientation angle distribution; low/high angle fraction"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Distribution binned or reduced to moments",
+        "truncation_error": "spatial correlations and full distribution shape lost",
+        "ambiguity_risk": "medium",
+        "notes": "Histogram binning loses fine detail; moments miss multimodality"
+      }
+    },
+    {
+      "id": "d3",
+      "name": "texture intensity",
+      "physical_meaning": "Degree of preferred crystallographic orientation in polycrystalline aggregate",
+      "units": "multiples of random distribution",
+      "rationale": "Affects anisotropic mechanical and physical properties",
+      "representation": {
+        "type": "scalar",
+        "encoding": "texture index or ODF maximum intensity",
+        "dimension": "1",
+        "notes": "Single scalar metric from orientation distribution function"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Complete ODF reduced to single intensity metric",
+        "truncation_error": "texture type and symmetry information lost",
+        "ambiguity_risk": "high",
+        "notes": "Different texture types can yield identical intensity values"
+      }
+    },
+    {
+      "id": "d4",
+      "name": "dislocation density",
+      "physical_meaning": "Total length of dislocation lines per unit volume",
+      "units": "m^-2",
+      "rationale": "Governs strain hardening and stored deformation energy",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous positive real number",
+        "dimension": "1",
+        "notes": "Typically 10^12 to 10^16 m^-2 range"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Dislocation types and spatial distribution not captured",
+        "truncation_error": "character and arrangement of dislocations lost",
+        "ambiguity_risk": "medium",
+        "notes": "Total density ignores edge vs screw character and cell structure"
+      }
+    },
+    {
+      "id": "d5",
+      "name": "precipitate volume fraction",
+      "physical_meaning": "Volume percentage of second-phase precipitate particles in matrix",
+      "units": "dimensionless fraction",
+      "rationale": "Controls precipitation strengthening and boundary pinning",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous value between 0 and 1",
+        "dimension": "1",
+        "notes": "Often paired with size/spacing for complete characterization"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Size distribution and spatial arrangement not encoded",
+        "truncation_error": "particle size, shape, and clustering lost",
+        "ambiguity_risk": "high",
+        "notes": "Same fraction can represent vastly different precipitate configurations"
+      }
+    },
+    {
+      "id": "d6",
+      "name": "stacking fault energy",
+      "physical_meaning": "Energy per unit area of stacking fault defects",
+      "units": "mJ/m^2",
+      "rationale": "Determines dislocation dissociation, twinning, and deformation mechanisms",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous positive real number",
+        "dimension": "1",
+        "notes": "Material-specific intrinsic property; temperature and composition dependent"
+      },
+      "quality": {
+        "bijective": true,
+        "lossy": false,
+        "loss_reason": null,
+        "truncation_error": null,
+        "ambiguity_risk": "low",
+        "notes": "Intrinsic material property with unique value at given conditions"
+      }
+    },
+    {
+      "id": "d7",
+      "name": "grain boundary density",
+      "physical_meaning": "Total grain boundary area per unit volume",
+      "units": "mm^-1",
+      "rationale": "Quantifies interface density affecting diffusion and mechanical response",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous positive real number",
+        "dimension": "1",
+        "notes": "Inversely proportional to grain size; Sv = k/d"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Derived from grain size; redundant encoding",
+        "truncation_error": "boundary type and network topology lost",
+        "ambiguity_risk": "medium",
+        "notes": "Different grain geometries give same density; assumes spherical grains"
+      }
+    },
+    {
+      "id": "d8",
+      "name": "grain aspect ratio",
+      "physical_meaning": "Ratio of longest to shortest grain dimension",
+      "units": "dimensionless ratio",
+      "rationale": "Characterizes grain elongation and morphological anisotropy",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous value greater than or equal to 1",
+        "dimension": "1",
+        "notes": "Unity indicates equiaxed grains; higher values show elongation"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Distribution and orientation of elongation not captured",
+        "truncation_error": "per-grain variation and directional anisotropy lost",
+        "ambiguity_risk": "medium",
+        "notes": "Average ratio hides bimodal populations and spatial gradients"
+      }
+    },
+    {
+      "id": "d9",
+      "name": "recrystallization fraction",
+      "physical_meaning": "Volume fraction of newly formed strain-free grains",
+      "units": "dimensionless fraction",
+      "rationale": "Tracks microstructure evolution during annealing and recovery",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous value between 0 and 1",
+        "dimension": "1",
+        "notes": "Zero for fully deformed, unity for fully recrystallized state"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Spatial distribution and nucleation sites not encoded",
+        "truncation_error": "recrystallization kinetics and front morphology lost",
+        "ambiguity_risk": "medium",
+        "notes": "Same fraction can represent uniform or clustered recrystallization"
+      }
+    }
+  ]
+}
