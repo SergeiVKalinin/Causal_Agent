@@ -5,141 +5,213 @@
       "d1",
       "d2",
       "d3",
+      "d4",
       "d5",
       "d6",
       "d7",
-      "d8"
+      "d8",
+      "d9",
+      "d10",
+      "d11"
     ],
     "edges": [
       {
-        "from": "d8",
-        "to": "d1",
+        "from": "d1",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Grain size affects dislocation accumulation during deformation"
+      },
+      {
+        "from": "d1",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Grain size controls strain partitioning behavior"
+      },
+      {
+        "from": "d1",
+        "to": "d9",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Zener pinning restricts grain growth"
+        "reason": "Grain size determines total boundary area"
       },
       {
-        "from": "d8",
+        "from": "d2",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Texture determines orientation distribution and misorientations"
+      },
+      {
+        "from": "d2",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Texture affects slip system activity variations"
+      },
+      {
+        "from": "d3",
         "to": "d6",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Orowan mechanism pins dislocations"
+        "reason": "Strain gradients require geometrically necessary dislocations"
       },
       {
-        "from": "d8",
-        "to": "d7",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Precipitates stabilize subgrain boundaries"
-      },
-      {
-        "from": "d6",
-        "to": "d7",
+        "from": "d4",
+        "to": "d3",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "High dislocation density drives subgrain formation"
+        "reason": "Subgrain boundaries create local strain gradients"
+      },
+      {
+        "from": "d5",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Boundary character directly determines energy distribution"
+      },
+      {
+        "from": "d6",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation density drives subgrain structure formation"
+      },
+      {
+        "from": "d6",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation energy contributes to stored energy"
+      },
+      {
+        "from": "d6",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Nonuniform dislocation distribution creates strain heterogeneity"
       },
       {
         "from": "d7",
-        "to": "d1",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Subgrains evolve into grains during recrystallization"
-      },
-      {
-        "from": "d1",
-        "to": "d5",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Grain size controls boundary network topology"
-      },
-      {
-        "from": "d3",
         "to": "d2",
         "type": "causal",
         "mechanism": "indirect",
         "confidence": "medium",
-        "reason": "Aspect ratio reflects deformation-induced texture development"
-      },
-      {
-        "from": "d2",
-        "to": "d5",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Texture determines crystallographic boundary character distribution"
-      },
-      {
-        "from": "d3",
-        "to": "d5",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "low",
-        "reason": "Aspect ratio influences boundaries via texture"
+        "reason": "Grain elongation indicates deformation texture development"
       },
       {
         "from": "d8",
-        "to": "d2",
+        "to": "d5",
         "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "low",
-        "reason": "Precipitates affect deformation mode and texture"
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Twins add special \u03a33 boundaries"
+      },
+      {
+        "from": "d8",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Coherent twins reduce average boundary energy"
+      },
+      {
+        "from": "d9",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Boundary energy contributes to total stored energy"
+      },
+      {
+        "from": "d11",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Misorientation distribution defines boundary character types"
       }
     ],
     "cycles_resolved": [
       {
-        "cycle": "d1 -> d6 -> d1",
-        "resolution": "Removed d1->d6; grain size affects strength not dislocation density directly",
-        "retained_edge": "d6->d1"
+        "cycle": "d3 -> d6 -> d3",
+        "resolution": "Retained both edges; sequential temporal mechanism",
+        "reason": "Initial strain creates GNDs, then dislocations create new strain"
       }
     ],
-    "notes": "Precipitate distribution is primary independent variable driving microstructure evolution",
+    "notes": "Promoted clear physical relationships. Cycle d3-d6 represents feedback during deformation process.",
     "edges_cleaned": [
       {
-        "from": "d8",
-        "to": "d1"
-      },
-      {
-        "from": "d8",
+        "from": "d1",
         "to": "d6"
       },
       {
-        "from": "d8",
-        "to": "d7"
-      },
-      {
-        "from": "d8",
-        "to": "d2"
+        "from": "d1",
+        "to": "d3"
       },
       {
         "from": "d1",
-        "to": "d5"
+        "to": "d9"
       },
       {
         "from": "d6",
-        "to": "d7"
+        "to": "d4"
       },
       {
-        "from": "d7",
-        "to": "d1"
+        "from": "d6",
+        "to": "d10"
       },
       {
-        "from": "d3",
-        "to": "d2"
+        "from": "d6",
+        "to": "d3"
       },
       {
-        "from": "d3",
-        "to": "d5"
+        "from": "d9",
+        "to": "d10"
       },
       {
         "from": "d2",
+        "to": "d11"
+      },
+      {
+        "from": "d2",
+        "to": "d3"
+      },
+      {
+        "from": "d11",
         "to": "d5"
+      },
+      {
+        "from": "d4",
+        "to": "d3"
+      },
+      {
+        "from": "d5",
+        "to": "d9"
+      },
+      {
+        "from": "d7",
+        "to": "d2"
+      },
+      {
+        "from": "d8",
+        "to": "d5"
+      },
+      {
+        "from": "d8",
+        "to": "d9"
       }
     ]
   }
