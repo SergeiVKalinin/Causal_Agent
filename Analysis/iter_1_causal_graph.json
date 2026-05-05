@@ -6,120 +6,174 @@
       "d2",
       "d3",
       "d4",
-      "d5"
+      "d5",
+      "d6",
+      "d7",
+      "d8",
+      "d9"
     ],
     "edges": [
       {
-        "from": "d3",
-        "to": "d1",
-        "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "texture controls grain growth anisotropy during processing"
-      },
-      {
-        "from": "d3",
+        "from": "d6",
         "to": "d4",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "texture creates preferred grain elongation directions"
+        "reason": "Dislocations store elastic strain energy"
       },
       {
         "from": "d4",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Stored energy drives recrystallization nucleation"
+      },
+      {
+        "from": "d6",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation density provides nucleation sites"
+      },
+      {
+        "from": "d8",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Mobility controls boundary migration rate"
+      },
+      {
+        "from": "d3",
         "to": "d1",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "elongation mechanistically increases effective grain dimensions"
+        "confidence": "high",
+        "reason": "Recrystallization refines grain structure"
       },
       {
-        "from": "d1",
-        "to": "d2",
+        "from": "d3",
+        "to": "d6",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "grain size determines boundary energy and misorientation"
+        "reason": "Recrystallization annihilates dislocations"
       },
       {
         "from": "d3",
         "to": "d2",
         "type": "causal",
         "mechanism": "direct",
-        "confidence": "high",
-        "reason": "texture clusters orientations reducing misorientation angles"
-      },
-      {
-        "from": "d4",
-        "to": "d2",
-        "type": "causal",
-        "mechanism": "direct",
         "confidence": "medium",
-        "reason": "elongation creates subgrain low-angle boundaries mechanistically"
+        "reason": "Recrystallization modifies crystallographic texture"
       },
       {
         "from": "d2",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Texture determines misorientation angle statistics"
+      },
+      {
+        "from": "d9",
         "to": "d5",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "misorientation directly defines boundary character classification"
+        "reason": "Misorientation defines grain boundary character"
+      },
+      {
+        "from": "d5",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Boundary character determines mobility"
+      },
+      {
+        "from": "d7",
+        "to": "d4",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Aspect ratio indicates deformation energy"
+      },
+      {
+        "from": "d7",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Elongation creates heterogeneous nucleation sites"
       },
       {
         "from": "d1",
-        "to": "d5",
+        "to": "d9",
         "type": "causal",
         "mechanism": "indirect",
         "confidence": "medium",
-        "reason": "grain size influences boundary energy favoring twins"
+        "reason": "Grain size affects neighbor misorientation distribution"
       },
       {
         "from": "d3",
-        "to": "d5",
+        "to": "d7",
         "type": "causal",
-        "mechanism": "indirect",
-        "confidence": "medium",
-        "reason": "texture affects CSL boundary probability through orientations"
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallization produces equiaxed grains"
       }
     ],
-    "cycles_resolved": [],
-    "notes": "DAG follows processing-structure hierarchy: texture and deformation control grain morphology, which determines boundary characteristics",
+    "cycles_resolved": [
+      {
+        "cycle": "d1-d6-d4-d3-d1",
+        "resolution": "Removed d1->d6 and d1->d4 correlational edges",
+        "reason": "Grain size results from recrystallization process"
+      }
+    ],
+    "notes": "Recrystallization is central transformation process; texture drives boundary character cascade",
     "edges_cleaned": [
       {
-        "from": "d3",
-        "to": "d1"
-      },
-      {
-        "from": "d3",
+        "from": "d6",
         "to": "d4"
       },
       {
-        "from": "d3",
-        "to": "d2"
-      },
-      {
-        "from": "d3",
-        "to": "d5"
-      },
-      {
-        "from": "d1",
-        "to": "d2"
-      },
-      {
-        "from": "d1",
-        "to": "d5"
+        "from": "d6",
+        "to": "d3"
       },
       {
         "from": "d4",
+        "to": "d3"
+      },
+      {
+        "from": "d3",
         "to": "d1"
       },
       {
-        "from": "d4",
+        "from": "d3",
         "to": "d2"
       },
       {
+        "from": "d3",
+        "to": "d7"
+      },
+      {
+        "from": "d1",
+        "to": "d9"
+      },
+      {
         "from": "d2",
+        "to": "d9"
+      },
+      {
+        "from": "d9",
         "to": "d5"
+      },
+      {
+        "from": "d5",
+        "to": "d8"
       }
     ]
   }
