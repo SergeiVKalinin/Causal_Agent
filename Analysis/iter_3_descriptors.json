@@ -1,0 +1,152 @@
+{
+  "iteration": 3,
+  "descriptors": [
+    {
+      "id": "d1",
+      "name": "grain size",
+      "physical_meaning": "average diameter of crystalline grains in material",
+      "units": "micrometers",
+      "rationale": "critical length scale controlling mechanical properties",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real-valued positive number",
+        "dimension": "1",
+        "notes": "single mean diameter value"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "full distribution reduced to single mean",
+        "truncation_error": "high for multimodal distributions",
+        "ambiguity_risk": "high",
+        "notes": "loses shape, variance, and spatial correlations"
+      }
+    },
+    {
+      "id": "d2",
+      "name": "grain boundary character",
+      "physical_meaning": "distribution of grain boundary misorientations",
+      "units": "dimensionless fractions",
+      "rationale": "boundary character controls diffusion and crack propagation",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "CSL fractions and misorientation distribution",
+        "dimension": "5",
+        "notes": "LAGB, \u03a33, \u03a39, \u03a311, random fractions"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "continuous distribution binned into five categories",
+        "truncation_error": "medium for complex boundary networks",
+        "ambiguity_risk": "medium",
+        "notes": "loses fine misorientation details and spatial topology"
+      }
+    },
+    {
+      "id": "d3",
+      "name": "crystallographic texture",
+      "physical_meaning": "preferred orientation distribution of crystal lattices",
+      "units": "dimensionless coefficients",
+      "rationale": "texture determines anisotropic mechanical response",
+      "representation": {
+        "type": "truncated_basis",
+        "encoding": "spherical harmonics expansion coefficients",
+        "dimension": "20",
+        "notes": "Bunge ODF coefficients to l=8"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "infinite series truncated at l=8",
+        "truncation_error": "low for smooth textures, higher for sharp",
+        "ambiguity_risk": "low",
+        "notes": "well-established representation with controllable accuracy"
+      }
+    },
+    {
+      "id": "d4",
+      "name": "dislocation density",
+      "physical_meaning": "total length of dislocations per unit volume",
+      "units": "per square meter",
+      "rationale": "governs strain hardening and stored energy",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real-valued positive number",
+        "dimension": "1",
+        "notes": "total density magnitude"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "loses dislocation type, arrangement, and spatial distribution",
+        "truncation_error": "high for heterogeneous dislocation structures",
+        "ambiguity_risk": "high",
+        "notes": "ignores GND vs SSD and cell structures"
+      }
+    },
+    {
+      "id": "d5",
+      "name": "precipitate distribution",
+      "physical_meaning": "statistical description of second phase particles",
+      "units": "nanometers, dimensionless",
+      "rationale": "precipitates control strength via Orowan mechanism",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "statistical moments of size distribution",
+        "dimension": "4",
+        "notes": "mean size, variance, volume fraction, spacing"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "full distribution reduced to four moments",
+        "truncation_error": "medium for non-Gaussian distributions",
+        "ambiguity_risk": "medium",
+        "notes": "loses shape details and spatial clustering"
+      }
+    },
+    {
+      "id": "d6",
+      "name": "subgrain structure",
+      "physical_meaning": "characteristic size of low-angle boundary cells",
+      "units": "micrometers",
+      "rationale": "subgrain boundaries contribute to strengthening",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real-valued positive number",
+        "dimension": "1",
+        "notes": "average subgrain or cell diameter"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "reduces complex cell network to single size",
+        "truncation_error": "high for heterogeneous deformation structures",
+        "ambiguity_risk": "high",
+        "notes": "loses morphology, misorientation, and distribution breadth"
+      }
+    },
+    {
+      "id": "d7",
+      "name": "stored elastic energy",
+      "physical_meaning": "elastic strain energy density from defects",
+      "units": "joules per cubic meter",
+      "rationale": "drives recrystallization and recovery processes",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real-valued positive number",
+        "dimension": "1",
+        "notes": "volumetric energy density"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "spatial distribution reduced to volume average",
+        "truncation_error": "high for localized deformation bands",
+        "ambiguity_risk": "medium",
+        "notes": "loses information about energy gradients and sources"
+      }
+    }
+  ]
+}
