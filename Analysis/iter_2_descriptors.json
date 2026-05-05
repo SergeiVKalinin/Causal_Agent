@@ -1,0 +1,110 @@
+{
+  "iteration": 2,
+  "descriptors": [
+    {
+      "id": "d1",
+      "name": "grain size",
+      "physical_meaning": "characteristic dimension of crystalline grains",
+      "units": "micrometers or nanometers",
+      "rationale": "controls strength, ductility via Hall-Petch relationship",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous positive real number",
+        "dimension": "1",
+        "notes": "log-scale often used for wide ranges"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "reduces full distribution to single value",
+        "truncation_error": "high for multimodal distributions",
+        "ambiguity_risk": "high",
+        "notes": "mean, median, mode yield different values"
+      }
+    },
+    {
+      "id": "d2",
+      "name": "grain boundary character",
+      "physical_meaning": "fraction of special low-energy grain boundaries",
+      "units": "dimensionless fraction",
+      "rationale": "influences corrosion resistance and crack propagation",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous bounded [0,1]",
+        "dimension": "1",
+        "notes": "can expand to distribution over \u03a3 values"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "collapses boundary misorientation distribution",
+        "truncation_error": "medium to high",
+        "ambiguity_risk": "high",
+        "notes": "loses specific \u03a3 type information"
+      }
+    },
+    {
+      "id": "d3",
+      "name": "texture intensity",
+      "physical_meaning": "degree of crystallographic orientation alignment",
+      "units": "times random (multiples of uniform)",
+      "rationale": "affects anisotropic mechanical and physical properties",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous positive real, minimum unity",
+        "dimension": "1",
+        "notes": "full ODF needs truncated harmonic expansion"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "reduces ODF to single intensity metric",
+        "truncation_error": "high for complex textures",
+        "ambiguity_risk": "high",
+        "notes": "loses texture component and symmetry information"
+      }
+    },
+    {
+      "id": "d4",
+      "name": "dislocation density",
+      "physical_meaning": "line length of dislocations per volume",
+      "units": "per square meter",
+      "rationale": "indicates work hardening state and strength",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous non-negative real",
+        "dimension": "1",
+        "notes": "log-scale common, ranges 10^10 to 10^16"
+      },
+      "quality": {
+        "bijective": true,
+        "lossy": false,
+        "loss_reason": null,
+        "truncation_error": "low with appropriate measurement",
+        "ambiguity_risk": "low",
+        "notes": "well-defined physical quantity, direct encoding"
+      }
+    },
+    {
+      "id": "d5",
+      "name": "grain aspect ratio",
+      "physical_meaning": "ratio of longest to shortest grain dimension",
+      "units": "dimensionless ratio",
+      "rationale": "indicates processing history and directional properties",
+      "representation": {
+        "type": "scalar",
+        "encoding": "continuous real, lower bound unity",
+        "dimension": "1",
+        "notes": "distribution over grains often informative"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "reduces grain shape distribution to average",
+        "truncation_error": "medium for heterogeneous microstructures",
+        "ambiguity_risk": "medium",
+        "notes": "loses orientation and spatial arrangement information"
+      }
+    }
+  ]
+}
