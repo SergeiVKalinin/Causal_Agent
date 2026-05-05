@@ -1,0 +1,351 @@
+{
+  "iteration": 4,
+  "causal_graph": {
+    "nodes": [
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "d5",
+      "d6",
+      "d8",
+      "d9",
+      "d10",
+      "d11",
+      "d12",
+      "d13",
+      "d14",
+      "d15",
+      "d16",
+      "d17",
+      "d18",
+      "d19"
+    ],
+    "edges": [
+      {
+        "from": "d1",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "boundary density inversely proportional to grain size"
+      },
+      {
+        "from": "d1",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "smaller grains accumulate more dislocations during deformation"
+      },
+      {
+        "from": "d6",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "dislocation density creates local lattice misorientation"
+      },
+      {
+        "from": "d6",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "GND subset of total dislocation density"
+      },
+      {
+        "from": "d11",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "KAM directly measures GND via Nye tensor"
+      },
+      {
+        "from": "d8",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "recrystallization annihilates dislocations forming new grains"
+      },
+      {
+        "from": "d8",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "high",
+        "reason": "recrystallization reduces dislocation density lowering KAM"
+      },
+      {
+        "from": "d10",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "subgrain boundaries form from dislocation rearrangement"
+      },
+      {
+        "from": "d2",
+        "to": "d17",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "boundary energy function of misorientation angle"
+      },
+      {
+        "from": "d2",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "character distribution derived from misorientation distribution"
+      },
+      {
+        "from": "d12",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "twin boundaries component of overall GBCD"
+      },
+      {
+        "from": "d13",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "orientation spread quantifies GND induced gradients"
+      },
+      {
+        "from": "d1",
+        "to": "d15",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "average grain size statistical moment of distribution"
+      },
+      {
+        "from": "d2",
+        "to": "d18",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "average misorientation statistical moment of distribution"
+      },
+      {
+        "from": "d3",
+        "to": "d19",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "texture constrains crystallographic orientation affecting Schmid factors"
+      },
+      {
+        "from": "d16",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "precipitates pin dislocations increasing stored density"
+      },
+      {
+        "from": "d16",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "particles pin boundaries inhibiting recrystallization migration"
+      },
+      {
+        "from": "d4",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "low",
+        "reason": "elongated grains increase boundary area per volume"
+      },
+      {
+        "from": "d10",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "subgrain boundaries contribute to local misorientation measurements"
+      },
+      {
+        "from": "d6",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "dislocations create intragranular orientation gradients"
+      },
+      {
+        "from": "d8",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "recrystallization produces new grains changing grain size"
+      },
+      {
+        "from": "d16",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "precipitates pin boundaries limiting grain growth"
+      },
+      {
+        "from": "d3",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "texture intensity constrains grain boundary misorientation range"
+      },
+      {
+        "from": "d5",
+        "to": "d17",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "low",
+        "reason": "boundary density influences total boundary energy"
+      },
+      {
+        "from": "d14",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "GND accumulation produces measurable orientation spread"
+      },
+      {
+        "from": "d15",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "grain size distribution determines average boundary density"
+      },
+      {
+        "from": "d18",
+        "to": "d17",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "misorientation distribution determines average boundary energy"
+      }
+    ],
+    "cycles_resolved": [],
+    "notes": "Promoted correlations to causal with physical mechanisms. Added processing-microstructure links.",
+    "edges_cleaned": [
+      {
+        "from": "d1",
+        "to": "d5"
+      },
+      {
+        "from": "d1",
+        "to": "d6"
+      },
+      {
+        "from": "d1",
+        "to": "d15"
+      },
+      {
+        "from": "d5",
+        "to": "d17"
+      },
+      {
+        "from": "d6",
+        "to": "d11"
+      },
+      {
+        "from": "d6",
+        "to": "d14"
+      },
+      {
+        "from": "d6",
+        "to": "d13"
+      },
+      {
+        "from": "d11",
+        "to": "d14"
+      },
+      {
+        "from": "d14",
+        "to": "d13"
+      },
+      {
+        "from": "d8",
+        "to": "d6"
+      },
+      {
+        "from": "d8",
+        "to": "d11"
+      },
+      {
+        "from": "d8",
+        "to": "d1"
+      },
+      {
+        "from": "d10",
+        "to": "d6"
+      },
+      {
+        "from": "d10",
+        "to": "d11"
+      },
+      {
+        "from": "d2",
+        "to": "d17"
+      },
+      {
+        "from": "d2",
+        "to": "d9"
+      },
+      {
+        "from": "d2",
+        "to": "d18"
+      },
+      {
+        "from": "d12",
+        "to": "d9"
+      },
+      {
+        "from": "d15",
+        "to": "d5"
+      },
+      {
+        "from": "d18",
+        "to": "d17"
+      },
+      {
+        "from": "d3",
+        "to": "d19"
+      },
+      {
+        "from": "d3",
+        "to": "d2"
+      },
+      {
+        "from": "d16",
+        "to": "d6"
+      },
+      {
+        "from": "d16",
+        "to": "d8"
+      },
+      {
+        "from": "d16",
+        "to": "d1"
+      },
+      {
+        "from": "d4",
+        "to": "d5"
+      }
+    ]
+  }
+}
