@@ -4,274 +4,106 @@
     {
       "id": "d1",
       "name": "grain size",
-      "physical_meaning": "characteristic length scale of crystal grains",
-      "units": "micrometers or nanometers",
-      "rationale": "fundamental microstructural feature controlling mechanical properties",
+      "physical_meaning": "characteristic dimension of crystalline grains",
+      "units": "micrometers",
+      "rationale": "controls mechanical properties and processing behavior",
       "representation": {
         "type": "scalar",
-        "encoding": "real positive number",
+        "encoding": "positive real number",
         "dimension": "1",
-        "notes": "typically log-normal distributed in polycrystals"
+        "notes": "log-normal distribution often assumed"
       },
       "quality": {
-        "bijective": true,
-        "lossy": false,
-        "loss_reason": null,
-        "truncation_error": null,
-        "ambiguity_risk": "low",
-        "notes": "direct measurement, well-defined single value"
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "collapses full distribution to single statistic",
+        "truncation_error": "distribution shape and variance lost",
+        "ambiguity_risk": "high",
+        "notes": "mean, median, mode yield different values"
       }
     },
     {
       "id": "d2",
       "name": "grain boundary misorientation",
-      "physical_meaning": "crystallographic angle between adjacent grain orientations",
-      "units": "degrees or radians",
-      "rationale": "determines grain boundary properties and energy",
+      "physical_meaning": "crystallographic angular differences across grain boundaries",
+      "units": "degrees",
+      "rationale": "determines boundary energy and material transport",
       "representation": {
-        "type": "scalar",
-        "encoding": "angle in degrees or radians",
-        "dimension": "1",
-        "notes": "bounded between 0 and maximum symmetry angle"
+        "type": "finite_vector",
+        "encoding": "histogram of misorientation angles",
+        "dimension": "variable",
+        "notes": "typically 10-50 bins from 0-62.8\u00b0"
       },
       "quality": {
-        "bijective": true,
-        "lossy": false,
-        "loss_reason": null,
-        "truncation_error": null,
-        "ambiguity_risk": "low",
-        "notes": "bounded scalar preserves full orientation information"
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "binning discretizes continuous angle distribution",
+        "truncation_error": "spatial correlations and axis information lost",
+        "ambiguity_risk": "medium",
+        "notes": "bin resolution affects information retention"
       }
     },
     {
       "id": "d3",
       "name": "texture intensity",
-      "physical_meaning": "degree of preferred crystallographic orientation alignment",
-      "units": "dimensionless ratio",
-      "rationale": "quantifies anisotropy in polycrystalline material properties",
+      "physical_meaning": "degree of preferred crystallographic orientation",
+      "units": "dimensionless",
+      "rationale": "influences anisotropic mechanical and physical properties",
       "representation": {
         "type": "scalar",
-        "encoding": "non-negative real number",
+        "encoding": "texture coefficient or ODF maximum",
         "dimension": "1",
-        "notes": "unity represents random texture, higher values stronger"
+        "notes": "values from 1 (random) upward"
       },
       "quality": {
         "bijective": false,
         "lossy": true,
-        "loss_reason": "collapses orientation distribution function to scalar",
-        "truncation_error": "high",
+        "loss_reason": "reduces full orientation distribution function",
+        "truncation_error": "texture type and symmetry information lost",
         "ambiguity_risk": "high",
-        "notes": "many distinct textures yield identical intensity"
+        "notes": "different textures can share same intensity"
       }
     },
     {
       "id": "d4",
       "name": "grain aspect ratio",
-      "physical_meaning": "elongation measure of grain morphology",
-      "units": "dimensionless ratio",
-      "rationale": "characterizes grain shape anisotropy from processing",
+      "physical_meaning": "elongation ratio of grain morphology",
+      "units": "dimensionless",
+      "rationale": "indicates processing history and directional properties",
       "representation": {
         "type": "scalar",
-        "encoding": "real number greater than one",
+        "encoding": "positive real ratio",
         "dimension": "1",
-        "notes": "unity indicates equiaxed grains"
+        "notes": "minimum value of 1 for equiaxed"
       },
       "quality": {
         "bijective": false,
         "lossy": true,
-        "loss_reason": "reduces 3D shape to single ratio",
-        "truncation_error": "medium",
+        "loss_reason": "averages distribution across all grains",
+        "truncation_error": "grain orientation and shape distribution lost",
         "ambiguity_risk": "medium",
-        "notes": "multiple grain shapes map to same ratio"
+        "notes": "axis definition and statistical measure unspecified"
       }
     },
     {
       "id": "d5",
-      "name": "grain boundary density",
-      "physical_meaning": "total grain boundary area per unit volume",
-      "units": "inverse length",
-      "rationale": "affects diffusion pathways and mechanical strength",
-      "representation": {
-        "type": "scalar",
-        "encoding": "positive real number",
-        "dimension": "1",
-        "notes": "inversely proportional to grain size"
-      },
-      "quality": {
-        "bijective": true,
-        "lossy": false,
-        "loss_reason": null,
-        "truncation_error": null,
-        "ambiguity_risk": "low",
-        "notes": "directly measurable geometric quantity"
-      }
-    },
-    {
-      "id": "d6",
-      "name": "dislocation density",
-      "physical_meaning": "total dislocation line length per unit volume",
-      "units": "inverse meters squared",
-      "rationale": "primary carrier of plastic deformation information",
-      "representation": {
-        "type": "scalar",
-        "encoding": "non-negative real number",
-        "dimension": "1",
-        "notes": "ranges from 10^10 to 10^16 m^-2"
-      },
-      "quality": {
-        "bijective": false,
-        "lossy": true,
-        "loss_reason": "ignores dislocation type and spatial distribution",
-        "truncation_error": "medium",
-        "ambiguity_risk": "medium",
-        "notes": "scalar hides complex dislocation network topology"
-      }
-    },
-    {
-      "id": "d8",
-      "name": "recrystallization fraction",
-      "physical_meaning": "volume fraction of recrystallized grains",
-      "units": "dimensionless fraction",
-      "rationale": "tracks microstructural evolution during annealing",
-      "representation": {
-        "type": "scalar",
-        "encoding": "real number between zero and one",
-        "dimension": "1",
-        "notes": "zero is unrecrystallized, one is fully recrystallized"
-      },
-      "quality": {
-        "bijective": true,
-        "lossy": false,
-        "loss_reason": null,
-        "truncation_error": null,
-        "ambiguity_risk": "low",
-        "notes": "bounded fraction with clear physical interpretation"
-      }
-    },
-    {
-      "id": "d9",
       "name": "grain boundary character distribution",
-      "physical_meaning": "statistical distribution of grain boundary types",
-      "units": "frequency per orientation bin",
-      "rationale": "captures grain boundary network complexity",
+      "physical_meaning": "population fractions of special boundary types",
+      "units": "dimensionless fractions",
+      "rationale": "special boundaries resist cracking and corrosion",
       "representation": {
-        "type": "truncated_basis",
-        "encoding": "histogram bins or series coefficients",
-        "dimension": "variable, typically 10-50",
-        "notes": "discretized orientation space or harmonic expansion"
+        "type": "finite_vector",
+        "encoding": "fractions per boundary type",
+        "dimension": "3-29",
+        "notes": "CSL boundaries \u03a33, \u03a39, etc."
       },
       "quality": {
         "bijective": false,
         "lossy": true,
-        "loss_reason": "discretization and basis truncation lose detail",
-        "truncation_error": "low to medium",
+        "loss_reason": "categorizes continuous misorientation into discrete types",
+        "truncation_error": "spatial arrangement and connectivity lost",
         "ambiguity_risk": "low",
-        "notes": "controllable loss via basis dimensionality choice"
-      }
-    },
-    {
-      "id": "d10",
-      "name": "subgrain density",
-      "physical_meaning": "number of dislocation cells per volume",
-      "units": "inverse volume",
-      "rationale": "characterizes heterogeneous dislocation structure",
-      "representation": {
-        "type": "scalar",
-        "encoding": "non-negative real number",
-        "dimension": "1",
-        "notes": "measures dislocation cell structure density"
-      },
-      "quality": {
-        "bijective": false,
-        "lossy": true,
-        "loss_reason": "ignores subgrain size distribution and morphology",
-        "truncation_error": "medium",
-        "ambiguity_risk": "medium",
-        "notes": "scalar loses spatial and size heterogeneity"
-      }
-    },
-    {
-      "id": "d11",
-      "name": "kernel average misorientation",
-      "physical_meaning": "local orientation gradient from lattice distortion",
-      "units": "degrees or radians",
-      "rationale": "sensitive indicator of local plastic strain",
-      "representation": {
-        "type": "scalar",
-        "encoding": "non-negative angular measure",
-        "dimension": "1",
-        "notes": "indicates local plastic deformation severity"
-      },
-      "quality": {
-        "bijective": false,
-        "lossy": true,
-        "loss_reason": "spatial averaging obscures detailed gradient field",
-        "truncation_error": "medium",
-        "ambiguity_risk": "medium",
-        "notes": "kernel size affects information retention"
-      }
-    },
-    {
-      "id": "d12",
-      "name": "twin boundary fraction",
-      "physical_meaning": "volume fraction of special twin boundaries",
-      "units": "dimensionless fraction",
-      "rationale": "twins influence mechanical and corrosion properties",
-      "representation": {
-        "type": "scalar",
-        "encoding": "real number between zero and one",
-        "dimension": "1",
-        "notes": "subset of grain boundary character distribution"
-      },
-      "quality": {
-        "bijective": true,
-        "lossy": false,
-        "loss_reason": null,
-        "truncation_error": null,
-        "ambiguity_risk": "low",
-        "notes": "well-defined fraction with clear physical basis"
-      }
-    },
-    {
-      "id": "d13",
-      "name": "stored energy",
-      "physical_meaning": "thermodynamic driving force for microstructural evolution",
-      "units": "joules per cubic meter",
-      "rationale": "quantifies total defect energy in material",
-      "representation": {
-        "type": "scalar",
-        "encoding": "non-negative energy density",
-        "dimension": "1",
-        "notes": "primarily from dislocations and grain boundaries"
-      },
-      "quality": {
-        "bijective": false,
-        "lossy": true,
-        "loss_reason": "aggregates multiple defect contributions into total",
-        "truncation_error": "medium",
-        "ambiguity_risk": "high",
-        "notes": "different defect configurations yield identical energy"
-      }
-    },
-    {
-      "id": "d14",
-      "name": "grain boundary energy",
-      "physical_meaning": "excess energy per boundary area",
-      "units": "joules per square meter",
-      "rationale": "determines grain boundary mobility and stability",
-      "representation": {
-        "type": "scalar",
-        "encoding": "positive real number",
-        "dimension": "1",
-        "notes": "depends on misorientation and boundary plane"
-      },
-      "quality": {
-        "bijective": false,
-        "lossy": true,
-        "loss_reason": "collapses five-parameter space to scalar",
-        "truncation_error": "high",
-        "ambiguity_risk": "high",
-        "notes": "many boundary configurations share same energy"
+        "notes": "preserves boundary type statistics well"
       }
     }
   ]
