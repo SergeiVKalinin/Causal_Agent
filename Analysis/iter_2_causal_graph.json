@@ -1,0 +1,133 @@
+{
+  "iteration": 2,
+  "causal_graph": {
+    "nodes": [
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "d5",
+      "d6",
+      "d7"
+    ],
+    "edges": [
+      {
+        "from": "d1",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Grain size directly determines boundary density"
+      },
+      {
+        "from": "d1",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Smaller grains constrain dislocation motion accumulation"
+      },
+      {
+        "from": "d1",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Grain size sets subgrain length scale"
+      },
+      {
+        "from": "d3",
+        "to": "d5",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Aspect ratio determines grain boundary area"
+      },
+      {
+        "from": "d4",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Texture controls grain orientation distribution statistics"
+      },
+      {
+        "from": "d4",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "Texture affects slip activity and accumulation"
+      },
+      {
+        "from": "d6",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation density drives subgrain wall formation"
+      },
+      {
+        "from": "d6",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Dislocation rearrangement creates subgrain misorientation evolution"
+      },
+      {
+        "from": "d2",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "High angle boundaries accommodate strain reducing"
+      }
+    ],
+    "cycles_resolved": [
+      {
+        "cycle": [
+          "d2",
+          "d6"
+        ],
+        "resolution": "Retain both edges representing dynamic equilibrium",
+        "justification": "Feedback loop during deformation and recovery"
+      }
+    ],
+    "notes": "Cycle d2-d6 represents physical feedback during thermomechanical processing",
+    "edges_cleaned": [
+      {
+        "from": "d1",
+        "to": "d5"
+      },
+      {
+        "from": "d1",
+        "to": "d6"
+      },
+      {
+        "from": "d1",
+        "to": "d7"
+      },
+      {
+        "from": "d6",
+        "to": "d7"
+      },
+      {
+        "from": "d6",
+        "to": "d2"
+      },
+      {
+        "from": "d3",
+        "to": "d5"
+      },
+      {
+        "from": "d4",
+        "to": "d2"
+      },
+      {
+        "from": "d4",
+        "to": "d6"
+      }
+    ]
+  }
+}
