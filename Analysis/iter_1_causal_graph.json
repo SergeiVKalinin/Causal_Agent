@@ -1,0 +1,70 @@
+{
+  "iteration": 1,
+  "causal_graph": {
+    "nodes": [
+      "d1",
+      "d2",
+      "d3"
+    ],
+    "edges": [
+      {
+        "from": "d1",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "smaller grains geometrically increase HAGB fraction"
+      },
+      {
+        "from": "d2",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "HAGB mobility controls grain growth kinetics"
+      },
+      {
+        "from": "d3",
+        "to": "d2",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "texture constrains grain orientation distribution statistically"
+      },
+      {
+        "from": "d3",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "medium",
+        "reason": "texture drives selective growth via orientation"
+      }
+    ],
+    "cycles_resolved": [
+      {
+        "cycle": [
+          "d1",
+          "d2",
+          "d1"
+        ],
+        "resolution": "bidirectional feedback loop physically valid",
+        "action": "retain both edges as mutual causation"
+      }
+    ],
+    "notes": "d1-d2 forms feedback loop grain size and boundary character coevolve during processing",
+    "edges_cleaned": [
+      {
+        "from": "d1",
+        "to": "d2"
+      },
+      {
+        "from": "d3",
+        "to": "d2"
+      },
+      {
+        "from": "d3",
+        "to": "d1"
+      }
+    ]
+  }
+}
