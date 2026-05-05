@@ -1,0 +1,278 @@
+{
+  "iteration": 5,
+  "descriptors": [
+    {
+      "id": "d1",
+      "name": "grain size",
+      "physical_meaning": "average grain diameter",
+      "units": "micrometers",
+      "rationale": "Single mean value characterizes distribution",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "positive real value"
+      }
+    },
+    {
+      "id": "d2",
+      "name": "grain boundary misorientation",
+      "physical_meaning": "crystallographic orientation difference across boundaries",
+      "units": "degrees",
+      "rationale": "Average angle between adjacent grain orientations",
+      "representation": {
+        "type": "scalar",
+        "encoding": "angle",
+        "dimension": "1",
+        "notes": "range zero to sixty-two degrees"
+      }
+    },
+    {
+      "id": "d3",
+      "name": "texture intensity",
+      "physical_meaning": "degree of preferred crystallographic orientation",
+      "units": "multiples of random",
+      "rationale": "Quantifies deviation from random orientation distribution",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "greater than one indicates texture"
+      }
+    },
+    {
+      "id": "d4",
+      "name": "grain aspect ratio",
+      "physical_meaning": "ratio of grain length to width",
+      "units": "dimensionless",
+      "rationale": "Characterizes grain elongation morphology",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "greater than or equal to one"
+      }
+    },
+    {
+      "id": "d5",
+      "name": "grain boundary density",
+      "physical_meaning": "boundary area per unit volume",
+      "units": "inverse micrometers",
+      "rationale": "Total interface area normalized by volume",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "positive intensive property"
+      }
+    },
+    {
+      "id": "d6",
+      "name": "dislocation density",
+      "physical_meaning": "total dislocation line length per volume",
+      "units": "per square meter",
+      "rationale": "Line defect density measure",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "typically ten to fifteen per meter squared"
+      }
+    },
+    {
+      "id": "d8",
+      "name": "recrystallization fraction",
+      "physical_meaning": "volume fraction of recrystallized grains",
+      "units": "dimensionless",
+      "rationale": "Proportion of transformed material",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "range zero to one"
+      }
+    },
+    {
+      "id": "d9",
+      "name": "grain boundary character distribution",
+      "physical_meaning": "frequency distribution of boundary types",
+      "units": "dimensionless",
+      "rationale": "Histogram over discrete boundary classifications",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "probability vector",
+        "dimension": "29",
+        "notes": "Sigma values one to twenty-nine"
+      }
+    },
+    {
+      "id": "d10",
+      "name": "subgrain density",
+      "physical_meaning": "number of subgrains per unit volume",
+      "units": "per cubic micrometer",
+      "rationale": "Count density of substructure elements",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "positive number density"
+      }
+    },
+    {
+      "id": "d11",
+      "name": "kernel average misorientation",
+      "physical_meaning": "average misorientation within grain neighborhoods",
+      "units": "degrees",
+      "rationale": "Local orientation gradient measure",
+      "representation": {
+        "type": "scalar",
+        "encoding": "angle",
+        "dimension": "1",
+        "notes": "indicates local plastic deformation"
+      }
+    },
+    {
+      "id": "d12",
+      "name": "twin boundary fraction",
+      "physical_meaning": "fraction of boundaries that are twins",
+      "units": "dimensionless",
+      "rationale": "Proportion of special coherent boundaries",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "range zero to one"
+      }
+    },
+    {
+      "id": "d13",
+      "name": "grain orientation spread",
+      "physical_meaning": "internal misorientation range within grains",
+      "units": "degrees",
+      "rationale": "Quantifies intragranular orientation variation",
+      "representation": {
+        "type": "scalar",
+        "encoding": "angle",
+        "dimension": "1",
+        "notes": "small for recrystallized grains"
+      }
+    },
+    {
+      "id": "d14",
+      "name": "geometrically necessary dislocation density",
+      "physical_meaning": "dislocations required to accommodate lattice curvature",
+      "units": "per square meter",
+      "rationale": "Dislocation density from orientation gradients",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "derived from EBSD curvature"
+      }
+    },
+    {
+      "id": "d15",
+      "name": "grain size distribution",
+      "physical_meaning": "statistical spread of grain sizes",
+      "units": "micrometers",
+      "rationale": "Histogram bins of grain diameter",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "histogram counts",
+        "dimension": "20",
+        "notes": "twenty logarithmically spaced bins"
+      }
+    },
+    {
+      "id": "d16",
+      "name": "precipitation state",
+      "physical_meaning": "size and distribution of precipitate particles",
+      "units": "nanometers and per cubic micrometer",
+      "rationale": "Mean size and number density",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "size and density",
+        "dimension": "2",
+        "notes": "diameter and count density"
+      }
+    },
+    {
+      "id": "d18",
+      "name": "misorientation angle distribution",
+      "physical_meaning": "frequency distribution of all misorientation angles",
+      "units": "dimensionless",
+      "rationale": "Histogram over angle ranges",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "probability distribution",
+        "dimension": "31",
+        "notes": "two degree bins zero to sixty-two"
+      }
+    },
+    {
+      "id": "d19",
+      "name": "schmid factor distribution",
+      "physical_meaning": "resolved shear stress factor across grains",
+      "units": "dimensionless",
+      "rationale": "Statistical distribution of slip system favorability",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "histogram",
+        "dimension": "10",
+        "notes": "bins from zero to point five"
+      }
+    },
+    {
+      "id": "d20",
+      "name": "stored energy",
+      "physical_meaning": "elastic energy from defects and distortions",
+      "units": "joules per cubic meter",
+      "rationale": "Total defect energy per volume",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real number",
+        "dimension": "1",
+        "notes": "positive energy density"
+      }
+    },
+    {
+      "id": "d21",
+      "name": "slip system activity",
+      "physical_meaning": "relative activation of crystallographic slip systems",
+      "units": "dimensionless",
+      "rationale": "Normalized activity across all systems",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "probability vector",
+        "dimension": "12",
+        "notes": "twelve FCC slip systems"
+      }
+    },
+    {
+      "id": "d22",
+      "name": "strain partitioning",
+      "physical_meaning": "heterogeneous strain distribution between grains",
+      "units": "dimensionless",
+      "rationale": "Statistical variance of local strain",
+      "representation": {
+        "type": "scalar",
+        "encoding": "variance measure",
+        "dimension": "1",
+        "notes": "coefficient of variation"
+      }
+    },
+    {
+      "id": "d23",
+      "name": "phase volume fraction",
+      "physical_meaning": "fraction of each crystallographic phase present",
+      "units": "dimensionless",
+      "rationale": "Proportions of constituent phases",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "probability vector",
+        "dimension": "3",
+        "notes": "common alloys have two to three phases"
+      }
+    }
+  ]
+}
