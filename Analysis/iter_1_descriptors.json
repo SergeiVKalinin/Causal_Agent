@@ -1,0 +1,68 @@
+{
+  "iteration": 1,
+  "descriptors": [
+    {
+      "id": "d1",
+      "name": "grain size",
+      "physical_meaning": "Average dimension of crystalline grains in material",
+      "units": "micrometers",
+      "rationale": "Fundamental microstructure parameter affecting mechanical properties",
+      "representation": {
+        "type": "scalar",
+        "encoding": "real-valued positive number",
+        "dimension": "1",
+        "notes": "Direct physical measurement, typically log-normal distributed"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Single statistic loses full size distribution",
+        "truncation_error": "high",
+        "ambiguity_risk": "high",
+        "notes": "Mean/median collapses multimodal or heterogeneous distributions"
+      }
+    },
+    {
+      "id": "d2",
+      "name": "grain boundary misorientation",
+      "physical_meaning": "Angular deviation between adjacent grain crystal orientations",
+      "units": "degrees",
+      "rationale": "Controls grain boundary energy and material behavior",
+      "representation": {
+        "type": "finite_vector",
+        "encoding": "histogram bins or statistical moments",
+        "dimension": "3-10",
+        "notes": "Mean, variance, skewness or binned distribution"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Moments or bins discard spatial correlation information",
+        "truncation_error": "medium",
+        "ambiguity_risk": "medium",
+        "notes": "Statistical summary loses fine structure and correlations"
+      }
+    },
+    {
+      "id": "d3",
+      "name": "texture intensity",
+      "physical_meaning": "Degree of preferred crystallographic orientation in polycrystal",
+      "units": "dimensionless",
+      "rationale": "Quantifies anisotropy in mechanical and physical properties",
+      "representation": {
+        "type": "truncated_basis",
+        "encoding": "spherical harmonics coefficients",
+        "dimension": "10-100",
+        "notes": "ODF expanded in generalized spherical harmonics"
+      },
+      "quality": {
+        "bijective": false,
+        "lossy": true,
+        "loss_reason": "Finite truncation of infinite basis expansion",
+        "truncation_error": "low to medium",
+        "ambiguity_risk": "low",
+        "notes": "Error decreases with more coefficients; controllable accuracy"
+      }
+    }
+  ]
+}
