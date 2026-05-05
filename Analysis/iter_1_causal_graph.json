@@ -6,7 +6,11 @@
       "d2",
       "d3",
       "d4",
-      "d5"
+      "d5",
+      "d6",
+      "d7",
+      "d8",
+      "d9"
     ],
     "edges": [
       {
@@ -15,7 +19,15 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Geometric inverse relationship, smaller grains increase boundary density"
+        "reason": "Grain boundary density inversely proportional to size"
+      },
+      {
+        "from": "d1",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Smaller grains have higher surface energy storage"
       },
       {
         "from": "d4",
@@ -23,7 +35,55 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Elongated grains increase total boundary area per volume"
+        "reason": "Elongated grains increase boundary area per volume"
+      },
+      {
+        "from": "d5",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Boundary energy contributes to total stored energy"
+      },
+      {
+        "from": "d6",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Dislocation strain energy adds to stored energy"
+      },
+      {
+        "from": "d7",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Stored energy drives recrystallization nucleation and growth"
+      },
+      {
+        "from": "d8",
+        "to": "d1",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallization produces new larger grains"
+      },
+      {
+        "from": "d8",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Recrystallized grains have eliminated dislocations"
+      },
+      {
+        "from": "d8",
+        "to": "d3",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Recrystallization nucleation randomizes crystallographic orientations"
       },
       {
         "from": "d3",
@@ -31,27 +91,64 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Strong texture causes grain alignment, reducing misorientation angles"
+        "reason": "Strong texture constrains grain misorientation distribution"
       },
       {
-        "from": "d3",
-        "to": "d4",
+        "from": "d2",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "Misorientation angles define boundary character distribution"
+      },
+      {
+        "from": "d9",
+        "to": "d8",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Texture from processing creates preferentially elongated grain morphology"
+        "reason": "Special boundaries resist recrystallization nucleation"
       },
       {
-        "from": "d1",
-        "to": "d4",
+        "from": "d9",
+        "to": "d7",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "Boundary character affects grain boundary energy"
+      },
+      {
+        "from": "d3",
+        "to": "d7",
         "type": "causal",
         "mechanism": "indirect",
         "confidence": "low",
-        "reason": "Grain growth may alter aspect ratio distribution"
+        "reason": "Texture affects boundary energy through misorientation"
       }
     ],
-    "cycles_resolved": [],
-    "notes": "Promoted texture-misorientation to causal. Added texture-aspect ratio edge from deformation processing physics.",
+    "cycles_resolved": [
+      {
+        "cycle": [
+          "d1",
+          "d7",
+          "d8",
+          "d1"
+        ],
+        "resolution": "Temporal separation: recrystallization occurs after deformation",
+        "note": "Dynamic process broken by time evolution"
+      },
+      {
+        "cycle": [
+          "d6",
+          "d7",
+          "d8",
+          "d6"
+        ],
+        "resolution": "Sequential stages: deformation then annealing recrystallization",
+        "note": "Causal ordering maintained through processing sequence"
+      }
+    ],
+    "notes": "DAG represents microstructure evolution during thermomechanical processing with recrystallization",
     "edges_cleaned": [
       {
         "from": "d1",
@@ -59,19 +156,35 @@
       },
       {
         "from": "d1",
-        "to": "d4"
+        "to": "d7"
+      },
+      {
+        "from": "d5",
+        "to": "d7"
+      },
+      {
+        "from": "d7",
+        "to": "d8"
       },
       {
         "from": "d4",
         "to": "d5"
       },
       {
+        "from": "d8",
+        "to": "d6"
+      },
+      {
+        "from": "d8",
+        "to": "d3"
+      },
+      {
         "from": "d3",
         "to": "d2"
       },
       {
-        "from": "d3",
-        "to": "d4"
+        "from": "d2",
+        "to": "d9"
       }
     ]
   }
