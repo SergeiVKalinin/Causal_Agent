@@ -8,9 +8,13 @@
       "d4",
       "d5",
       "d6",
-      "d7",
       "d8",
-      "d9"
+      "d9",
+      "d10",
+      "d11",
+      "d12",
+      "d13",
+      "d14"
     ],
     "edges": [
       {
@@ -19,87 +23,39 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Geometric: boundary density inversely proportional to grain size"
+        "reason": "geometric: boundary density inversely proportional to size"
       },
       {
         "from": "d1",
-        "to": "d6",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Hall-Petch: smaller grains increase dislocation storage capacity"
-      },
-      {
-        "from": "d1",
-        "to": "d7",
+        "to": "d14",
         "type": "causal",
         "mechanism": "indirect",
         "confidence": "high",
-        "reason": "Grain size affects energy through boundaries and dislocations"
+        "reason": "via boundary density affects total boundary energy"
       },
       {
-        "from": "d6",
-        "to": "d7",
+        "from": "d1",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "indirect",
+        "confidence": "high",
+        "reason": "smaller grains increase boundary contribution to energy"
+      },
+      {
+        "from": "d1",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "low",
+        "reason": "grain size constrains subgrain formation space"
+      },
+      {
+        "from": "d2",
+        "to": "d14",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Dislocation strain fields store elastic energy directly"
-      },
-      {
-        "from": "d5",
-        "to": "d7",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Grain boundaries contribute interfacial energy to total"
-      },
-      {
-        "from": "d7",
-        "to": "d8",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Stored energy provides thermodynamic driving force for recrystallization"
-      },
-      {
-        "from": "d6",
-        "to": "d8",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Dislocation density enables nucleation site formation"
-      },
-      {
-        "from": "d8",
-        "to": "d1",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Recrystallization forms new grains with different size distribution"
-      },
-      {
-        "from": "d8",
-        "to": "d6",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "New grains form dislocation-free, annihilating existing dislocations"
-      },
-      {
-        "from": "d8",
-        "to": "d7",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "high",
-        "reason": "Recrystallization consumes stored energy during grain boundary migration"
-      },
-      {
-        "from": "d3",
-        "to": "d2",
-        "type": "causal",
-        "mechanism": "direct",
-        "confidence": "medium",
-        "reason": "Strong texture constrains crystallographic orientation distribution"
+        "reason": "Read-Shockley: misorientation determines boundary energy"
       },
       {
         "from": "d2",
@@ -107,15 +63,23 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "high",
-        "reason": "Misorientation angles directly define boundary character distribution"
+        "reason": "misorientation defines character distribution components"
       },
       {
-        "from": "d8",
-        "to": "d3",
+        "from": "d3",
+        "to": "d2",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Random nucleation orientation weakens deformation texture"
+        "reason": "strong texture reduces misorientation spread"
+      },
+      {
+        "from": "d3",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "texture controls boundary character statistics"
       },
       {
         "from": "d4",
@@ -123,65 +87,138 @@
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Elongated grains geometrically increase boundary area density"
+        "reason": "elongated grains increase boundary area density"
       },
       {
-        "from": "d9",
-        "to": "d8",
+        "from": "d5",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "boundary energy proportional to boundary area"
+      },
+      {
+        "from": "d6",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "dislocation strain energy directly contributes"
+      },
+      {
+        "from": "d6",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "dislocations create local lattice misorientation"
+      },
+      {
+        "from": "d6",
+        "to": "d10",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Special boundaries have different mobilities affecting kinetics"
+        "reason": "dislocations rearrange into subgrain boundaries"
       },
       {
         "from": "d8",
-        "to": "d4",
+        "to": "d6",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "recrystallization annihilates dislocations"
+      },
+      {
+        "from": "d8",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "recrystallization consumes stored energy"
+      },
+      {
+        "from": "d8",
+        "to": "d3",
         "type": "causal",
         "mechanism": "direct",
         "confidence": "medium",
-        "reason": "Recrystallization produces equiaxed grains reducing aspect ratio"
+        "reason": "recrystallization alters crystallographic texture"
       },
       {
-        "from": "d3",
-        "to": "d6",
+        "from": "d8",
+        "to": "d10",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "recrystallization removes deformation substructure"
+      },
+      {
+        "from": "d9",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "character distribution determines average boundary energy"
+      },
+      {
+        "from": "d10",
+        "to": "d11",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "subgrain boundaries create misorientation gradients"
+      },
+      {
+        "from": "d10",
+        "to": "d13",
         "type": "causal",
         "mechanism": "indirect",
-        "confidence": "low",
-        "reason": "Texture affects slip system activity influencing dislocation density"
+        "confidence": "medium",
+        "reason": "subgrain boundaries store energy"
+      },
+      {
+        "from": "d11",
+        "to": "d13",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "medium",
+        "reason": "KAM reflects local stored deformation energy"
+      },
+      {
+        "from": "d12",
+        "to": "d9",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "twin fraction defines character distribution component"
+      },
+      {
+        "from": "d12",
+        "to": "d14",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "twin boundaries lower average boundary energy"
+      },
+      {
+        "from": "d13",
+        "to": "d8",
+        "type": "causal",
+        "mechanism": "direct",
+        "confidence": "high",
+        "reason": "stored energy drives recrystallization thermodynamics"
       }
     ],
     "cycles_resolved": [
       {
-        "cycle": [
-          "d1",
-          "d7",
-          "d8",
-          "d1"
-        ],
-        "resolution": "Time-dependent process: deformation then recrystallization",
-        "method": "Temporal ordering separates feedback loop"
-      },
-      {
-        "cycle": [
-          "d6",
-          "d7",
-          "d8",
-          "d6"
-        ],
-        "resolution": "Sequential stages: dislocation accumulation then annihilation",
-        "method": "Process stages prevent simultaneous causation"
-      },
-      {
-        "cycle": [
-          "d7",
-          "d8",
-          "d7"
-        ],
-        "resolution": "Energy consumption during recrystallization is unidirectional",
-        "method": "Thermodynamic irreversibility prevents cycle"
+        "cycle": "d13 -> d8 -> d13",
+        "resolution": "feedback loop: stored energy drives recrystallization",
+        "kept_edge": "d13 -> d8",
+        "reason": "primary driving force direction"
       }
     ],
-    "notes": "DAG represents deformation-recrystallization sequence with temporal separation preventing cycles",
+    "notes": "Microstructure evolution DAG with thermodynamic and kinetic relationships",
     "edges_cleaned": [
       {
         "from": "d1",
@@ -189,19 +226,59 @@
       },
       {
         "from": "d1",
-        "to": "d6"
+        "to": "d14"
       },
       {
         "from": "d1",
-        "to": "d7"
+        "to": "d13"
+      },
+      {
+        "from": "d1",
+        "to": "d10"
       },
       {
         "from": "d5",
-        "to": "d7"
+        "to": "d14"
       },
       {
-        "from": "d7",
+        "from": "d13",
         "to": "d8"
+      },
+      {
+        "from": "d10",
+        "to": "d11"
+      },
+      {
+        "from": "d2",
+        "to": "d14"
+      },
+      {
+        "from": "d2",
+        "to": "d9"
+      },
+      {
+        "from": "d9",
+        "to": "d14"
+      },
+      {
+        "from": "d3",
+        "to": "d2"
+      },
+      {
+        "from": "d3",
+        "to": "d9"
+      },
+      {
+        "from": "d4",
+        "to": "d5"
+      },
+      {
+        "from": "d6",
+        "to": "d11"
+      },
+      {
+        "from": "d6",
+        "to": "d10"
       },
       {
         "from": "d8",
@@ -213,19 +290,15 @@
       },
       {
         "from": "d8",
-        "to": "d4"
+        "to": "d10"
       },
       {
-        "from": "d3",
-        "to": "d2"
-      },
-      {
-        "from": "d3",
-        "to": "d6"
-      },
-      {
-        "from": "d2",
+        "from": "d12",
         "to": "d9"
+      },
+      {
+        "from": "d12",
+        "to": "d14"
       }
     ]
   }
